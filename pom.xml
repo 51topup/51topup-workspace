@@ -271,8 +271,26 @@
                     </execution>
                 </executions>
                 <configuration>
+                    <args>
+                        <arg>-Xjsr305=strict</arg>
+                        <arg>-Xjvm-default=all</arg>
+                        <arg>-Xuse-14-inline-classes-mangling-scheme</arg>
+                        <arg>-Xcontext-receivers</arg>
+                    </args>
                     <jvmTarget>21</jvmTarget>
+                    <apiVersion>2.0</apiVersion>
+                    <languageVersion>2.0</languageVersion>
+                    <compilerPlugins>
+                        <plugin>spring</plugin>
+                    </compilerPlugins>
                 </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.jetbrains.kotlin</groupId>
+                        <artifactId>kotlin-maven-allopen</artifactId>
+                        <version>${kotlin.version}</version>
+                    </dependency>
+                </dependencies>
             </plugin>
         </plugins>
     </build>
