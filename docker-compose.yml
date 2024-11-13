@@ -1,0 +1,21 @@
+services:
+  postgresql:
+    image: postgres:17.0
+    ports:
+      - "15432:5432"
+    environment:
+      POSTGRES_DB: topup
+      POSTGRES_USER: topup
+      POSTGRES_PASSWORD: 123456
+  redis-server:
+    image: redis:7.4.1-alpine
+    ports:
+      - "16379:6379"
+  nats-server:
+    image: nats:2.10.22-alpine
+    ports:
+      - "14222:4222"
+      - "16222:6222"
+      - "18222:8222"
+    entrypoint: nats-server
+    command: -js
