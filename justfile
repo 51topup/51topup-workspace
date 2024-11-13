@@ -11,6 +11,7 @@ postgres:
     psql -d "postgres://topup:123456@127.0.0.1:15432/topup"
 
 flyway-migrate:
+    ./mvnw -Pgenerator org.flywaydb:flyway-maven-plugin:10.20.0:clean
     ./mvnw -Pgenerator org.flywaydb:flyway-maven-plugin:10.20.0:migrate
 
 jooq-generate:
