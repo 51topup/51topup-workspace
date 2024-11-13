@@ -11,7 +11,7 @@ import org.testcontainers.containers.wait.strategy.Wait
 import org.testcontainers.junit.jupiter.Container
 
 @TestConfiguration(proxyBeanMethods = false)
-open class TestContainersConfiguration {
+class TestContainersConfiguration {
 
     companion object {
         @JvmStatic
@@ -23,7 +23,7 @@ open class TestContainersConfiguration {
     }
 
     @Bean
-    open fun dynamicPropertyRegistrar(): DynamicPropertyRegistrar {
+    fun dynamicPropertyRegistrar(): DynamicPropertyRegistrar {
         return DynamicPropertyRegistrar { registry: DynamicPropertyRegistry ->
             registry.add(
                 "nats.spring.server"
@@ -38,13 +38,13 @@ open class TestContainersConfiguration {
 
     @Bean
     @ServiceConnection("redis")
-    open fun redisContainer(): GenericContainer<*> {
+    fun redisContainer(): GenericContainer<*> {
         return GenericContainer("redis:7.4.1-alpine").withExposedPorts(6379)
     }
 
     @Bean
     @ServiceConnection
-    open fun postgresqlContainer(): PostgreSQLContainer<*> {
+    fun postgresqlContainer(): PostgreSQLContainer<*> {
         return PostgreSQLContainer("postgres:17")
             .withDatabaseName("topup")
             .withUsername("topup")
