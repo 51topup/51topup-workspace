@@ -4,6 +4,7 @@ topup workspace
 # Stack Stack
 
 - Java 21 with virtual thread enabled
+- Apache Maven 3.9.9
 - Spring Boot 3.4.0
 - Vaadin 24.5
 - jOOQ 3.19.15
@@ -11,7 +12,14 @@ topup workspace
 - Redis 7
 - Nats Server 2.11
 
-## References
+# Get Started
+
+- Clone the repository
+- Run `docker compose up -d` to start the database and message broker
+- Run `just dbunit-operation` to create the database schema and load the initial data
+- Run `mvn spring-boot:run` to start the application
+
+# References
 
 - Read the documentation at [vaadin.com/docs](https://vaadin.com/docs).
 - Karibu-DSL: https://github.com/mvysny/karibu-dsl
