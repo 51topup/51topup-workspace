@@ -54,7 +54,7 @@ public class Account extends TableImpl<AccountRecord> {
     /**
      * The column <code>public.account.id</code>.
      */
-    public final TableField<AccountRecord, Integer> ID = createField(DSL.name("id"), SQLDataType.INTEGER.nullable(false).identity(true), this, "");
+    public final TableField<AccountRecord, Long> ID = createField(DSL.name("id"), SQLDataType.BIGINT.nullable(false).identity(true), this, "");
 
     /**
      * The column <code>public.account.mobile_phone</code>.
@@ -145,8 +145,8 @@ public class Account extends TableImpl<AccountRecord> {
     }
 
     @Override
-    public Identity<AccountRecord, Integer> getIdentity() {
-        return (Identity<AccountRecord, Integer>) super.getIdentity();
+    public Identity<AccountRecord, Long> getIdentity() {
+        return (Identity<AccountRecord, Long>) super.getIdentity();
     }
 
     @Override
@@ -198,14 +198,14 @@ public class Account extends TableImpl<AccountRecord> {
     // -------------------------------------------------------------------------
 
     @Override
-    public Row11<Integer, String, String, String, String, String, Integer, Integer, Long, LocalDateTime, LocalDateTime> fieldsRow() {
+    public Row11<Long, String, String, String, String, String, Integer, Integer, Long, LocalDateTime, LocalDateTime> fieldsRow() {
         return (Row11) super.fieldsRow();
     }
 
     /**
      * Convenience mapping calling {@link SelectField#convertFrom(Function)}.
      */
-    public <U> SelectField<U> mapping(Function11<? super Integer, ? super String, ? super String, ? super String, ? super String, ? super String, ? super Integer, ? super Integer, ? super Long, ? super LocalDateTime, ? super LocalDateTime, ? extends U> from) {
+    public <U> SelectField<U> mapping(Function11<? super Long, ? super String, ? super String, ? super String, ? super String, ? super String, ? super Integer, ? super Integer, ? super Long, ? super LocalDateTime, ? super LocalDateTime, ? extends U> from) {
         return convertFrom(Records.mapping(from));
     }
 
@@ -213,7 +213,7 @@ public class Account extends TableImpl<AccountRecord> {
      * Convenience mapping calling {@link SelectField#convertFrom(Class,
      * Function)}.
      */
-    public <U> SelectField<U> mapping(Class<U> toType, Function11<? super Integer, ? super String, ? super String, ? super String, ? super String, ? super String, ? super Integer, ? super Integer, ? super Long, ? super LocalDateTime, ? super LocalDateTime, ? extends U> from) {
+    public <U> SelectField<U> mapping(Class<U> toType, Function11<? super Long, ? super String, ? super String, ? super String, ? super String, ? super String, ? super Integer, ? super Integer, ? super Long, ? super LocalDateTime, ? super LocalDateTime, ? extends U> from) {
         return convertFrom(toType, Records.mapping(from));
     }
 }
