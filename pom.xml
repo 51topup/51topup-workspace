@@ -326,11 +326,15 @@
                         <!-- common configurations -->
                         <configuration>
                             <type>CLEAN_INSERT</type>
+                            <format>flat</format>
                             <driver>org.postgresql.Driver</driver>
                             <url>${pg-dev-url}</url>
                             <username>topup</username>
                             <password>123456</password>
                             <schema>public</schema>
+                            <dbconfig>
+                                <datatypeFactory>org.dbunit.ext.postgresql.PostgresqlDataTypeFactory</datatypeFactory>
+                            </dbconfig>
                             <sources>
                                 <src>src/test/resources/db/dataset/accounts.xml</src>
                             </sources>
