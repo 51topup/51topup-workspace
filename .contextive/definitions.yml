@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=contextive-schema.json
+contexts:
+  - name: 会员
+    domainVisionStatement: 管理会员信息，包括卖家、供应商和内部员工
+    terms:
+      - name: Account
+        definition: 账号是会员的唯一标识，用于登录和识别会员
+      - name: Seller
+        definition: 各个电商平台上的卖家，主要是销售各种虚拟充值服务
+      - name: Provider
+        definition: 虚拟服务供应商，主要是提供各种虚拟充值服务，卖家负责销售服务提供的虚拟商品服务
+      - name: Staff
+        definition: 内部工作人员，主要是处理会员的各种问题
+  - name: 电商平台
+    domainVisionStatement: 电商平台的信息
+    terms:
+      - name: Platform
+        definition: 电商平台信息，包括对应的API调用接口和基础信息
+      - name: Shop
+        definition: 电商平台上的店铺信息，包括店铺的基本信息和店铺的商品信息
+  - name: 商品
+    domainVisionStatement: 商品信息管理，包括商品的基本信息和库存信息
+    terms:
+      - name: Catalog
+        definition: 商品类目信息，用于展示商品的分类
+      - name: Product
+        definition: 产品信息，也就是产品的最原始信息
+      - name: Item
+        definition: 在销售的商品信息，包括商品的价格、库存等信息
+  - name: 订单
+    domainVisionStatement: 订单管理
+    terms:
+      - name: Order
+        definition: A set of payment rules that defines when invoices are due, and actions to take when unpaid.
+  - name: 评价
+    domainVisionStatement: 评价管理
+    terms:
+      - name: Review
+        definition: 评价信息，包括评价内容、评价人和评价时间等，同时包括正负面标签
+  - name: 充值
+    domainVisionStatement: 和充值相关的信息，如会员的账号、充值记录等
+    terms:
+      - name: DepositAccount
+        definition: 充值账号，是指卖家在供应商的充值账号，包含账号信息和余额等
+      - name: RechargeRecord
+        definition: 充值记录，包括充值的时间、金额、状态等
