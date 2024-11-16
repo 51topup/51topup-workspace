@@ -45,7 +45,7 @@ class TestContainersConfiguration {
     @Bean
     @ServiceConnection
     fun postgresqlContainer(): PostgreSQLContainer<*> {
-        return PostgreSQLContainer("postgres:17")
+        return PostgreSQLContainer("postgres:17.1")
             .withDatabaseName("topup")
             .withUsername("topup")
             .withPassword("1234456")
