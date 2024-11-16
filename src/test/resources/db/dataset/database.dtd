@@ -5,11 +5,13 @@
 <!ELEMENT account EMPTY>
 <!ATTLIST account
     id CDATA #IMPLIED
+    nick CDATA #REQUIRED
     mobile_phone CDATA #REQUIRED
+    email CDATA #IMPLIED
     hashed_password CDATA #REQUIRED
     first_name CDATA #REQUIRED
     last_name CDATA #REQUIRED
-    role_names CDATA #REQUIRED
+    roles CDATA #REQUIRED
     type CDATA #REQUIRED
     status CDATA #REQUIRED
     flag CDATA #IMPLIED
