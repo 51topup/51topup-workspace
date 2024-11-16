@@ -32,11 +32,15 @@ contexts:
     terms:
       - name: Order
         definition: A set of payment rules that defines when invoices are due, and actions to take when unpaid.
+      - name: BlackBuyer
+        definition: 黑名单，屏蔽某一些用户的订单，比如恶意用户，返回充值失败
   - name: 评价
     domainVisionStatement: 评价管理
     terms:
       - name: Review
         definition: 评价信息，包括评价内容、评价人和评价时间等，同时包括正负面标签
+      - name: Ignorer
+        definition: 被忽略的买家，不对该买家进行主动评价
   - name: 充值
     domainVisionStatement: 和充值相关的信息，如会员的账号、充值记录等
     terms:
