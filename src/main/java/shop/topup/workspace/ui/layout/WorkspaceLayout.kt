@@ -15,6 +15,7 @@ import com.vaadin.flow.theme.lumo.LumoUtility
 import shop.topup.workspace.ui.security.AuthenticatedUser
 import shop.topup.workspace.ui.views.ItemsView
 import shop.topup.workspace.ui.views.OrdersView
+import shop.topup.workspace.ui.views.ReviewsView
 import shop.topup.workspace.ui.views.ShopsView
 
 /**
@@ -55,6 +56,7 @@ class WorkspaceLayout(authenticatedUser: AuthenticatedUser, accessChecker: Acces
         nav.addItem(SideNavItem("交易管理", OrdersView::class.java, VaadinIcon.CASH.create()))
         nav.addItem(SideNavItem("服务商管理", OrdersView::class.java, VaadinIcon.ARCHIVES.create()))
         nav.addItem(SideNavItem("店铺管理", ShopsView::class.java, VaadinIcon.SHOP.create()))
+        nav.addItem(SideNavItem("评价管理", ReviewsView::class.java, VaadinIcon.COMMENTS.create()))
         return nav
     }
 
