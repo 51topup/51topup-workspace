@@ -7,6 +7,7 @@ import com.vaadin.flow.component.button.Button
 import com.vaadin.flow.component.notification.Notification
 import com.vaadin.flow.component.textfield.TextField
 import com.vaadin.flow.router.HasDynamicTitle
+import com.vaadin.flow.router.PageTitle
 import com.vaadin.flow.router.Route
 import jakarta.annotation.security.RolesAllowed
 import shop.topup.workspace.ui.layout.WorkspaceLayout
@@ -14,7 +15,8 @@ import shop.topup.workspace.ui.security.Role
 
 @RolesAllowed(Role.SELLER)
 @Route(value = "/items", layout = WorkspaceLayout::class)
-class ItemsView : KComposite(), HasDynamicTitle {
+@PageTitle("商品管理")
+class ItemsView : KComposite() {
     private lateinit var nameField: TextField
     private lateinit var greetButton: Button
 
@@ -46,7 +48,4 @@ class ItemsView : KComposite(), HasDynamicTitle {
         }
     }
 
-    override fun getPageTitle(): String {
-        return "商品列表"
-    }
 }
