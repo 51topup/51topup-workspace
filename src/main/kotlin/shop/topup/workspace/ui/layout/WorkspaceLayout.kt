@@ -28,9 +28,13 @@ import shop.topup.workspace.ui.views.ShopsView
  *
  * @author linux_china
  */
-class WorkspaceLayout(authenticatedUser: AuthenticatedUser, accessChecker: AccessAnnotationChecker) : AppLayout() {
+class WorkspaceLayout(
+    @Transient val authenticatedUser: AuthenticatedUser,
+    @Transient val accessChecker: AccessAnnotationChecker
+) : AppLayout() {
 
     init {
+        setPrimarySection(Section.DRAWER)
         addHeaderContent()
         addDrawerContent()
     }
@@ -40,8 +44,9 @@ class WorkspaceLayout(authenticatedUser: AuthenticatedUser, accessChecker: Acces
         logo.height = "44px"
         addToNavbar(true, DrawerToggle(), logo)
         val menuBar = MenuBar()
-        menuBar.addThemeVariants(MenuBarVariant.LUMO_DROPDOWN_INDICATORS);
-        val userMenu = menuBar.addItem("User")
+        menuBar.addThemeVariants(MenuBarVariant.LUMO_DROPDOWN_INDICATORS)
+        val nick = authenticatedUser.get()?.nick ?: "User"
+        val userMenu = menuBar.addItem(nick)
         userMenu.icon(VaadinIcon.USER) {}
         val userSubMenu: SubMenu = userMenu.subMenu
         userSubMenu.addItem("Profile")
