@@ -18,4 +18,10 @@ class AccountDAOTest : TestcontainersBaseTest() {
         println(1L.account?.id)
     }
 
+    @Test
+    fun testFindByPhone() {
+        val account = accountDAO.findByPhone("18667135137")!!
+        println(account.id)
+    }
+
 }
