@@ -10,7 +10,9 @@ import com.vaadin.flow.component.icon.VaadinIcon
 import com.vaadin.flow.component.orderedlayout.Scroller
 import com.vaadin.flow.component.sidenav.SideNav
 import com.vaadin.flow.component.sidenav.SideNavItem
+import com.vaadin.flow.server.auth.AccessAnnotationChecker
 import com.vaadin.flow.theme.lumo.LumoUtility
+import shop.topup.workspace.ui.security.AuthenticatedUser
 import shop.topup.workspace.ui.views.ItemsView
 import shop.topup.workspace.ui.views.OrdersView
 import shop.topup.workspace.ui.views.ShopsView
@@ -20,7 +22,7 @@ import shop.topup.workspace.ui.views.ShopsView
  *
  * @author linux_china
  */
-class WorkspaceLayout : AppLayout() {
+class WorkspaceLayout(authenticatedUser: AuthenticatedUser, accessChecker: AccessAnnotationChecker) : AppLayout() {
 
     init {
         addHeaderContent()
@@ -28,7 +30,7 @@ class WorkspaceLayout : AppLayout() {
     }
 
     private fun addHeaderContent() {
-        val logo = Image("images/logo.png", "Topup workspace logo")
+        val logo = Image("/assets/images/logo.png", "Topup workspace logo")
         logo.height = "44px"
         addToNavbar(true, DrawerToggle(), logo)
     }
