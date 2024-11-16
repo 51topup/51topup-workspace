@@ -1,7 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
 <!DOCTYPE dataset SYSTEM "database.dtd">
 <dataset>
-    <account id="1" mobile_phone="186" hashed_password="xxx" first_name="立兵" last_name="陈"
-             role_names="admin" type="1" status="1" flag="0"
+    <account id="1" nick="seller1" mobile_phone="18667135137"
+             hashed_password="$2a$10$LR//g1U7ke9hVSHzMVCj3uONzweP3MrOknVIv1tqqEpZAkyoEpOVm" first_name="卖家"
+             last_name="陈"
+             roles="seller" type="0" status="1" flag="0"
+             created_at="2024-11-11 11:11:11" updated_at="2024-11-11 11:11:11"/>
+    <account id="1" nick="admin1" mobile_phone="18667135137"
+             hashed_password="$2a$10$LR//g1U7ke9hVSHzMVCj3uONzweP3MrOknVIv1tqqEpZAkyoEpOVm" first_name="小二"
+             last_name="陈"
+             roles="admin" type="1" status="1" flag="0"
              created_at="2024-11-11 11:11:11" updated_at="2024-11-11 11:11:11"/>
 </dataset>
