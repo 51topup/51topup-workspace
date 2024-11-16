@@ -9,12 +9,12 @@ import java.util.function.Function;
 
 import org.jooq.Field;
 import org.jooq.ForeignKey;
-import org.jooq.Function11;
+import org.jooq.Function13;
 import org.jooq.Identity;
 import org.jooq.Name;
 import org.jooq.Record;
 import org.jooq.Records;
-import org.jooq.Row11;
+import org.jooq.Row13;
 import org.jooq.Schema;
 import org.jooq.SelectField;
 import org.jooq.Table;
@@ -57,9 +57,19 @@ public class Account extends TableImpl<AccountRecord> {
     public final TableField<AccountRecord, Long> ID = createField(DSL.name("id"), SQLDataType.BIGINT.nullable(false).identity(true), this, "");
 
     /**
+     * The column <code>public.account.nick</code>.
+     */
+    public final TableField<AccountRecord, String> NICK = createField(DSL.name("nick"), SQLDataType.VARCHAR(100).nullable(false), this, "");
+
+    /**
      * The column <code>public.account.mobile_phone</code>.
      */
     public final TableField<AccountRecord, String> MOBILE_PHONE = createField(DSL.name("mobile_phone"), SQLDataType.VARCHAR(32).nullable(false), this, "");
+
+    /**
+     * The column <code>public.account.email</code>.
+     */
+    public final TableField<AccountRecord, String> EMAIL = createField(DSL.name("email"), SQLDataType.VARCHAR(128), this, "");
 
     /**
      * The column <code>public.account.hashed_password</code>.
@@ -77,9 +87,9 @@ public class Account extends TableImpl<AccountRecord> {
     public final TableField<AccountRecord, String> LAST_NAME = createField(DSL.name("last_name"), SQLDataType.VARCHAR(100).nullable(false), this, "");
 
     /**
-     * The column <code>public.account.role_names</code>.
+     * The column <code>public.account.roles</code>.
      */
-    public final TableField<AccountRecord, String> ROLE_NAMES = createField(DSL.name("role_names"), SQLDataType.VARCHAR(100).nullable(false), this, "");
+    public final TableField<AccountRecord, String> ROLES = createField(DSL.name("roles"), SQLDataType.VARCHAR(100).nullable(false), this, "");
 
     /**
      * The column <code>public.account.type</code>.
@@ -194,18 +204,18 @@ public class Account extends TableImpl<AccountRecord> {
     }
 
     // -------------------------------------------------------------------------
-    // Row11 type methods
+    // Row13 type methods
     // -------------------------------------------------------------------------
 
     @Override
-    public Row11<Long, String, String, String, String, String, Integer, Integer, Long, LocalDateTime, LocalDateTime> fieldsRow() {
-        return (Row11) super.fieldsRow();
+    public Row13<Long, String, String, String, String, String, String, String, Integer, Integer, Long, LocalDateTime, LocalDateTime> fieldsRow() {
+        return (Row13) super.fieldsRow();
     }
 
     /**
      * Convenience mapping calling {@link SelectField#convertFrom(Function)}.
      */
-    public <U> SelectField<U> mapping(Function11<? super Long, ? super String, ? super String, ? super String, ? super String, ? super String, ? super Integer, ? super Integer, ? super Long, ? super LocalDateTime, ? super LocalDateTime, ? extends U> from) {
+    public <U> SelectField<U> mapping(Function13<? super Long, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super Integer, ? super Integer, ? super Long, ? super LocalDateTime, ? super LocalDateTime, ? extends U> from) {
         return convertFrom(Records.mapping(from));
     }
 
@@ -213,7 +223,7 @@ public class Account extends TableImpl<AccountRecord> {
      * Convenience mapping calling {@link SelectField#convertFrom(Class,
      * Function)}.
      */
-    public <U> SelectField<U> mapping(Class<U> toType, Function11<? super Long, ? super String, ? super String, ? super String, ? super String, ? super String, ? super Integer, ? super Integer, ? super Long, ? super LocalDateTime, ? super LocalDateTime, ? extends U> from) {
+    public <U> SelectField<U> mapping(Class<U> toType, Function13<? super Long, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super String, ? super Integer, ? super Integer, ? super Long, ? super LocalDateTime, ? super LocalDateTime, ? extends U> from) {
         return convertFrom(toType, Records.mapping(from));
     }
 }
