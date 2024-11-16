@@ -8,8 +8,11 @@ import com.vaadin.flow.component.notification.Notification
 import com.vaadin.flow.component.textfield.TextField
 import com.vaadin.flow.router.HasDynamicTitle
 import com.vaadin.flow.router.Route
+import jakarta.annotation.security.RolesAllowed
 import shop.topup.workspace.ui.layout.WorkspaceLayout
+import shop.topup.workspace.ui.security.Role
 
+@RolesAllowed(Role.SELLER)
 @Route(value = "/orders", layout = WorkspaceLayout::class)
 class OrdersView : KComposite(), HasDynamicTitle {
     private lateinit var nameField: TextField

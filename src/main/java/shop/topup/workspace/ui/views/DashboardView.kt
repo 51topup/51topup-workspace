@@ -5,9 +5,12 @@ import com.github.mvysny.karibudsl.v10.h2
 import com.github.mvysny.karibudsl.v10.verticalLayout
 import com.vaadin.flow.router.Route
 import com.vaadin.flow.router.RouteAlias
+import jakarta.annotation.security.RolesAllowed
 import shop.topup.workspace.ui.layout.WorkspaceLayout
+import shop.topup.workspace.ui.security.Role
 
 
+@RolesAllowed(Role.SELLER)
 @Route(value = "", layout = WorkspaceLayout::class)
 @RouteAlias(value = "/workspace", layout = WorkspaceLayout::class)
 class DashboardView : KComposite() {

@@ -1,61 +1,38 @@
 package shop.topup.workspace.ui.views
 
-import com.github.mvysny.karibudsl.v10.*
-import com.github.mvysny.kaributools.navigateTo
-import com.github.mvysny.kaributools.setPrimary
-import com.vaadin.flow.component.Key
-import com.vaadin.flow.component.button.Button
-import com.vaadin.flow.component.notification.Notification
-import com.vaadin.flow.component.orderedlayout.FlexComponent
-import com.vaadin.flow.component.textfield.PasswordField
-import com.vaadin.flow.component.textfield.TextField
-import com.vaadin.flow.router.HasDynamicTitle
+import com.vaadin.flow.component.login.LoginOverlay
+import com.vaadin.flow.router.BeforeEnterEvent
+import com.vaadin.flow.router.BeforeEnterObserver
+import com.vaadin.flow.router.PageTitle
 import com.vaadin.flow.router.Route
+import com.vaadin.flow.router.internal.RouteUtil
+import com.vaadin.flow.server.VaadinService
+import com.vaadin.flow.server.auth.AnonymousAllowed
+import org.springframework.beans.factory.annotation.Autowired
+import shop.topup.workspace.ui.security.AuthenticatedUser
+
 
 @Route(value = "/login")
-class LoginView : KComposite(), HasDynamicTitle {
-    private lateinit var nameField: TextField
-    private lateinit var passwordField: PasswordField
-    private lateinit var loginButton: Button
-
-    // The main view UI definition
-    private val root = ui {
-        // Use custom CSS classes to apply styling. This is defined in styles.css.
-        verticalLayout(classNames = "centered-content") {
-            alignItems = FlexComponent.Alignment.CENTER;
-            h2("机器猫登录")
-            // Use TextField for standard text input
-            nameField = textField("Your name:") {
-                addClassName("bordered")
-                require(true)
-            }
-            // Use TextField for standard text input
-            passwordField = passwordField("Your password:") {
-                addClassName("bordered")
-                require(true)
-            }
-            // Use Button for a clickable button
-            loginButton = button("Login") {
-                setPrimary()
-                addClickShortcut(Key.ENTER)
-            }
-        }
-    }
+@PageTitle("Login")
+@AnonymousAllowed
+class LoginView : LoginOverlay(), BeforeEnterObserver {
+    @Autowired
+    @Transient
+    lateinit var authenticatedUser: AuthenticatedUser
 
     init {
-        // attach functionality to the UI components.
-        // It's a good practice to keep UI functionality separated from UI definition.
-        loginButton.onClick {
-            if (nameField.value.isEmpty() || passwordField.value.isEmpty()) {
-                Notification.show("请输入用户名和密码！")
-                return@onClick
-            } else {
-                navigateTo("/workspace")
-            }
-        }
+        action = RouteUtil.getRoutePath(VaadinService.getCurrent().context, javaClass)
+        isForgotPasswordButtonVisible = false
+        isOpened = true
     }
 
-    override fun getPageTitle(): String {
-        return "登录"
+    override fun beforeEnter(beforeEnterEvent: BeforeEnterEvent) {
+        if (authenticatedUser.get() != null) {
+            // Already logged in
+            isOpened = false
+            beforeEnterEvent.forwardTo("/workspace")
+        }
+
+        isError = beforeEnterEvent.getLocation().getQueryParameters().getParameters().containsKey("error")
     }
 }
