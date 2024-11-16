@@ -1,8 +1,10 @@
 package shop.topup.workspace
 
 import com.vaadin.flow.component.page.AppShellConfigurator
+import com.vaadin.flow.component.page.Push
 import com.vaadin.flow.server.PWA
 import com.vaadin.flow.theme.Theme
+import com.vaadin.flow.theme.lumo.Lumo
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
 
@@ -14,9 +16,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication
  *
  */
 @SpringBootApplication
-@PWA(name = "Topup workspace", shortName = "51Topup")
-@Theme("my-theme")
-open class TopupWorkspaceApp : AppShellConfigurator
+@PWA(name = "机器猫工作平台", shortName = "机器猫")
+@Theme(themeClass = Lumo::class)
+@Push
+class TopupWorkspaceApp : AppShellConfigurator
 
 fun main(args: Array<String>) {
     SpringApplication.run(TopupWorkspaceApp::class.java, *args)
