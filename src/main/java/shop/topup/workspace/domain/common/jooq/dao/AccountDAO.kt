@@ -15,4 +15,16 @@ import shop.topup.workspace.domain.common.jooq.tables.records.AccountRecord
 @Repository
 class AccountDAO(@Autowired dslContext: DSLContext) :
     JooqDAO<Account, AccountRecord, Long>(dslContext, Account.ACCOUNT) {
+
+    fun findByPhone(phone: String): AccountRecord? {
+        return dslContext.selectFrom(Account.ACCOUNT)
+            .where(Account.ACCOUNT.MOBILE_PHONE.eq(phone))
+            .fetchOne()
+    }
+
+    fun findByNick(nick: String): AccountRecord? {
+        return dslContext.selectFrom(Account.ACCOUNT)
+            .where(Account.ACCOUNT.NICK.eq(nick))
+            .fetchOne()
+    }
 }
