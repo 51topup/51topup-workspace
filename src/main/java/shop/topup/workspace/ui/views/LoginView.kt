@@ -21,6 +21,8 @@ class LoginView : LoginOverlay(), BeforeEnterObserver {
     lateinit var authenticatedUser: AuthenticatedUser
 
     init {
+        setTitle("机器猫自动充值管理平台")
+        description = "一站式管理虚拟充值业务"
         action = RouteUtil.getRoutePath(VaadinService.getCurrent().context, javaClass)
         isForgotPasswordButtonVisible = false
         isOpened = true
@@ -33,6 +35,6 @@ class LoginView : LoginOverlay(), BeforeEnterObserver {
             beforeEnterEvent.forwardTo("/workspace")
         }
 
-        isError = beforeEnterEvent.getLocation().getQueryParameters().getParameters().containsKey("error")
+        isError = beforeEnterEvent.location.queryParameters.parameters.containsKey("error")
     }
 }
