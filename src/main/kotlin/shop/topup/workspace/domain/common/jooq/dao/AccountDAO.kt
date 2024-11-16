@@ -27,4 +27,10 @@ class AccountDAO(@Autowired dslContext: DSLContext) :
             .where(Account.ACCOUNT.NICK.eq(nick))
             .fetchOne()
     }
+
+    fun findByEmail(email: String): AccountRecord? {
+        return dslContext.selectFrom(Account.ACCOUNT)
+            .where(Account.ACCOUNT.EMAIL.eq(email))
+            .fetchOne()
+    }
 }
