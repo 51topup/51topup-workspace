@@ -11,9 +11,7 @@ import shop.topup.workspace.domain.common.jooq.dao.AccountDAO
 import shop.topup.workspace.domain.common.jooq.tables.records.AccountRecord
 
 @Service
-class UserDetailsServiceImpl : UserDetailsService {
-    @Autowired
-    lateinit var accountDAO: AccountDAO
+class UserDetailsServiceImpl(val accountDAO: AccountDAO) : UserDetailsService {
 
     @Throws(UsernameNotFoundException::class)
     override fun loadUserByUsername(username: String): UserDetails {
