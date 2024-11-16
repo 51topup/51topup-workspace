@@ -1,12 +1,16 @@
 package shop.topup.workspace.ui.layout
 
+import com.github.mvysny.karibudsl.v10.icon
 import com.vaadin.flow.component.applayout.AppLayout
 import com.vaadin.flow.component.applayout.DrawerToggle
+import com.vaadin.flow.component.contextmenu.SubMenu
 import com.vaadin.flow.component.html.Footer
 import com.vaadin.flow.component.html.H1
 import com.vaadin.flow.component.html.Header
 import com.vaadin.flow.component.html.Image
 import com.vaadin.flow.component.icon.VaadinIcon
+import com.vaadin.flow.component.menubar.MenuBar
+import com.vaadin.flow.component.menubar.MenuBarVariant
 import com.vaadin.flow.component.orderedlayout.Scroller
 import com.vaadin.flow.component.sidenav.SideNav
 import com.vaadin.flow.component.sidenav.SideNavItem
@@ -17,6 +21,7 @@ import shop.topup.workspace.ui.views.ItemsView
 import shop.topup.workspace.ui.views.OrdersView
 import shop.topup.workspace.ui.views.ReviewsView
 import shop.topup.workspace.ui.views.ShopsView
+
 
 /**
  * workspace layout
@@ -34,6 +39,16 @@ class WorkspaceLayout(authenticatedUser: AuthenticatedUser, accessChecker: Acces
         val logo = Image("/assets/images/logo.png", "Topup workspace logo")
         logo.height = "44px"
         addToNavbar(true, DrawerToggle(), logo)
+        val menuBar = MenuBar()
+        menuBar.addThemeVariants(MenuBarVariant.LUMO_DROPDOWN_INDICATORS);
+        val userMenu = menuBar.addItem("User")
+        userMenu.icon(VaadinIcon.USER) {}
+        val userSubMenu: SubMenu = userMenu.subMenu
+        userSubMenu.addItem("Profile")
+        userSubMenu.addItem("Logout")
+        menuBar.style.set("margin-left", "auto")
+        menuBar.style.set("padding", "15px")
+        addToNavbar(menuBar)
     }
 
     private fun addDrawerContent() {
