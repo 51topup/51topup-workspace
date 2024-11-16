@@ -18,6 +18,13 @@ topup workspace
 - Run `docker compose up -d` to start the database and message broker
 - Run `just dbunit-operation` to create the database schema and load the initial data
 - Run `mvn spring-boot:run` to start the application
+             
+# [C4 Model](https://c4model.com/)
+
+- Context: 整个系统，这里是指机器猫整个系统，包括多个应用、外部系统和底层基础设施
+- Container: 某一独立应用、外部系统或基础设施，目前主要包括：三个内部系统 `卖家工作平台`、`外部充值对接应用`、`平台对接应用`。
+- Component：支撑应用功能的组件，目前主要是Vaadin的`View`、`Component`、`Service`、`DAO`等。 
+- Code：具体功能对应的代码
 
 # References
 
