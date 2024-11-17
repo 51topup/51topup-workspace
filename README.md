@@ -40,3 +40,4 @@ topup workspace
 - jOOQ and Kotlin: https://www.baeldung.com/kotlin/jooq
 - jOOQ Spring Integration: https://github.com/martinellich/jooq-spring
 - jOOQ Ad-hoc Converter: https://www.jooq.org/doc/latest/manual/sql-execution/fetching/ad-hoc-converter/
+- 10 Nice Examples of Writing SQL in Kotlin With jOOQ: https://blog.jooq.org/10-nice-examples-of-writing-sql-in-kotlin-with-jooq/
