@@ -3,7 +3,7 @@ package shop.topup.workspace.domain.common
 import org.springframework.context.ApplicationContext
 import org.springframework.context.ApplicationContextAware
 import org.springframework.stereotype.Component
-import shop.topup.workspace.domain.common.jooq.dao.AccountDAO
+import shop.topup.workspace.domain.common.dao.AccountDAO
 import shop.topup.workspace.domain.common.jooq.tables.records.AccountRecord
 
 lateinit var appContext: ApplicationContext

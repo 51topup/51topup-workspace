@@ -1,4 +1,4 @@
-package shop.topup.workspace.domain.common.jooq.dao
+package shop.topup.workspace.domain.common.dao
 
 import ch.martinelli.oss.jooqspring.JooqDAO
 import org.jooq.DSLContext
