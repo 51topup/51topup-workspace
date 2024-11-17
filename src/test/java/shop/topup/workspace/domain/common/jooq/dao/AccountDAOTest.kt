@@ -1,6 +1,7 @@
 package shop.topup.workspace.domain.common.jooq.dao
 
 import com.github.database.rider.core.api.dataset.DataSet
+import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import shop.topup.workspace.TestcontainersBaseTest
@@ -14,7 +15,7 @@ class AccountDAOTest : TestcontainersBaseTest() {
     @Test
     fun testFindById() {
         val account = accountDAO.findById(1L)
-        println(account.get().id)
+        assertThat(account).isPresent
         println(1L.account?.id)
     }
 
