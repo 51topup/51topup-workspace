@@ -37,4 +37,6 @@ topup workspace
 - [jOOQ](https://www.jooq.org/): an internal DSL and source code generator, modelling the SQL language as a type safe
   Java API to help you write better SQL
 - [vaadin-jooq](https://github.com/martinellich/vaadin-jooq): is a small library to integrate Vaadin and jOOQ
+- jOOQ and Kotlin: https://www.baeldung.com/kotlin/jooq
 - jOOQ Spring Integration: https://github.com/martinellich/jooq-spring
+- jOOQ Ad-hoc Converter: https://www.jooq.org/doc/latest/manual/sql-execution/fetching/ad-hoc-converter/
