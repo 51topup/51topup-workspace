@@ -27,6 +27,7 @@
         <jooq-utilities.version>1.1.2</jooq-utilities.version>
         <database-rider.version>1.44.0</database-rider.version>
         <pg-dev-url>jdbc:postgresql://localhost:15432/topup</pg-dev-url>
+        <start-class>shop.topup.workspace.TopupWorkspaceAppKt</start-class>
     </properties>
 
     <developers>
