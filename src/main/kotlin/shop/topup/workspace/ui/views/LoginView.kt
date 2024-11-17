@@ -1,5 +1,6 @@
 package shop.topup.workspace.ui.views
 
+import com.vaadin.flow.component.login.LoginI18n
 import com.vaadin.flow.component.login.LoginOverlay
 import com.vaadin.flow.router.BeforeEnterEvent
 import com.vaadin.flow.router.BeforeEnterObserver
@@ -15,7 +16,7 @@ import shop.topup.workspace.ui.security.AuthenticatedUser
 @Route(value = "/login")
 @PageTitle("Login")
 @AnonymousAllowed
-class LoginView : LoginOverlay(), BeforeEnterObserver {
+class LoginView(loginI18n: LoginI18n) : LoginOverlay(loginI18n), BeforeEnterObserver {
     @Autowired
     @Transient
     lateinit var authenticatedUser: AuthenticatedUser
