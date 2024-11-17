@@ -415,6 +415,7 @@
                                         <inputSchema>public</inputSchema>
                                         <excludes>flyway_schema_history</excludes>
                                     </database>
+                                    <!--<name>org.jooq.codegen.KotlinGenerator</name>-->
                                     <name>ch.martinelli.oss.jooq.EqualsAndHashCodeJavaGenerator</name>
                                     <target>
                                         <packageName>shop.topup.workspace.domain.common.jooq</packageName>
