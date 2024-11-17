@@ -1,4 +1,4 @@
-package shop.topup.workspace.ui.common
+package shop.topup.workspace.ui.i18n
 
 import com.vaadin.flow.component.login.LoginI18n
 import com.vaadin.flow.internal.JsonSerializer
