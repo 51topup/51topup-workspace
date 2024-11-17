@@ -16,22 +16,24 @@ class TestContainersConfiguration {
     companion object {
         @JvmStatic
         @Container
-        var natsServerContainer: GenericContainer<*> =
+        val natsServerContainer: GenericContainer<*> =
             GenericContainer("nats:2.10.22-alpine")
                 .withExposedPorts(4222)
                 .waitingFor(Wait.forListeningPorts(4222))
+                .apply {
+                    start()
+                }
     }
 
     @Bean
     fun dynamicPropertyRegistrar(): DynamicPropertyRegistrar {
         return DynamicPropertyRegistrar { registry: DynamicPropertyRegistry ->
-            registry.add(
-                "nats.spring.server"
-            ) {
-                natsServerContainer.start()
-                val port = natsServerContainer.getMappedPort(4222)
-                val host = natsServerContainer.host
-                String.format("nats://%s:%d", host, port)
+            with(registry) {
+                add("nats.spring.server") {
+                    val port = natsServerContainer.getMappedPort(4222)
+                    val host = natsServerContainer.host
+                    String.format("nats://%s:%d", host, port)
+                }
             }
         }
     }
