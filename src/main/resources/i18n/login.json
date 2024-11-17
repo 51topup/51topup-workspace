@@ -1,0 +1,15 @@
+{
+  "form": {
+    "title": "用户登录",
+    "username": "用户名",
+    "password": "密码",
+    "submit": "登录",
+    "forgotPassword": "忘记密码"
+  },
+  "errorMessage": {
+    "title": "用户名或密码错误",
+    "message": "请检查您输入的用户名和密码是否正确，然后重试。",
+    "username": "用户名必填",
+    "password": "密码必填"
+  }
+}
