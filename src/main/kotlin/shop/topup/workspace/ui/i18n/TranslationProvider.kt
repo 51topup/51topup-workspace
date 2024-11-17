@@ -1,6 +1,7 @@
 package shop.topup.workspace.ui.i18n
 
 import com.vaadin.flow.i18n.I18NProvider
+import org.jetbrains.annotations.PropertyKey
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Component
@@ -21,7 +22,11 @@ class TranslationProvider : I18NProvider {
         return listOf(Locale.of("en"), Locale.of("zh"))
     }
 
-    override fun getTranslation(key: String?, locale: Locale, vararg params: Any): String {
+    override fun getTranslation(
+        @PropertyKey(resourceBundle = "i18n.messages") key: String?,
+        locale: Locale,
+        vararg params: Any
+    ): String {
         if (key == null) {
             log.warn("Translation called with empty key!")
             return ""
