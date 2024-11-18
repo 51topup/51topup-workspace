@@ -25,6 +25,12 @@ topup workspace
 - Container: 某一独立应用、外部系统或基础设施，目前主要包括：三个内部系统 `卖家工作平台`、`外部充值对接应用`、`平台对接应用`。
 - Component：支撑应用功能的组件，目前主要是Vaadin的`View`、`Component`、`Service`、`DAO`等。 
 - Code：具体功能对应的代码
+          
+# 淘宝开放平台
+
+* 基础技术：https://open.taobao.com/doc.htm?docId=118395&docType=1
+* 聚石塔：https://open.taobao.com/doc.htm?docId=101130&docType=1
+* 常用工具: https://open.taobao.com/docV3.htm?docId=1&docType=15
 
 # References
 
