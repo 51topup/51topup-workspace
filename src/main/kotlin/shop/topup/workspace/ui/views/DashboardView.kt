@@ -2,7 +2,9 @@ package shop.topup.workspace.ui.views
 
 import com.github.mvysny.karibudsl.v10.KComposite
 import com.github.mvysny.karibudsl.v10.h2
+import com.github.mvysny.karibudsl.v10.text
 import com.github.mvysny.karibudsl.v10.verticalLayout
+import com.vaadin.flow.i18n.I18NProvider.translate
 import com.vaadin.flow.router.Route
 import com.vaadin.flow.router.RouteAlias
 import jakarta.annotation.security.RolesAllowed
@@ -19,6 +21,7 @@ class DashboardView : KComposite() {
         // Use custom CSS classes to apply styling. This is defined in styles.css.
         verticalLayout(classNames = "centered-content") {
             h2("Dashboard")
+            text(translate("hello.world"))
         }
     }
 
