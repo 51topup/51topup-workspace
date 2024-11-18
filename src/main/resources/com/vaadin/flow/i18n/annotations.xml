@@ -1,0 +1,10 @@
+<root>
+    <item name='com.vaadin.flow.i18n.I18NProvider java.lang.String translate(java.lang.String, java.lang.Object...)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.vaadin.flow.i18n.I18NProvider java.lang.String translate(java.lang.String, java.lang.Object...) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation
+                name="org.jetbrains.annotations.PropertyKey(resourceBundle = &quot;vaadin-i18n.translations&quot;)"/>
+    </item>
+</root>
