@@ -1,6 +1,7 @@
 package shop.topup.workspace.ui.layout
 
 import com.github.mvysny.karibudsl.v10.icon
+import com.vaadin.flow.component.UI
 import com.vaadin.flow.component.applayout.AppLayout
 import com.vaadin.flow.component.applayout.DrawerToggle
 import com.vaadin.flow.component.html.*
@@ -45,8 +46,17 @@ class WorkspaceLayout(
         menuBar.addItem(nick).apply {
             icon(VaadinIcon.USER)
             subMenu.apply {
-                addItem("Profile")
-                addItem("Logout")
+                addItem("个人信息") {
+                    UI.getCurrent().navigate(ProfileView::class.java)
+                }.apply {
+                    icon(VaadinIcon.USER_CARD)
+                }
+                addItem("退出") {
+                    authenticatedUser.logout()
+                    UI.getCurrent().navigate(LoginView::class.java)
+                }.apply {
+                    icon(VaadinIcon.SIGN_OUT)
+                }
             }
         }
         addToNavbar(menuBar)
