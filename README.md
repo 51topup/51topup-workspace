@@ -27,7 +27,8 @@ topup workspace
 - Code：具体功能对应的代码
           
 # 淘宝开放平台
-
+           
+* 应用管理：https://work.open.taobao.com/open-console-ec/34912212/app_app
 * 基础技术：https://open.taobao.com/doc.htm?docId=118395&docType=1
 * 聚石塔：https://open.taobao.com/doc.htm?docId=101130&docType=1
 * 常用工具: https://open.taobao.com/docV3.htm?docId=1&docType=15
