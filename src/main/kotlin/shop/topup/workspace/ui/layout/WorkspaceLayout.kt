@@ -132,8 +132,8 @@ class WorkspaceLayout(
                     VaadinIcon.ENVELOPE.create()
                 ).apply {
                     suffixComponent = Span("12").apply {
-                        getElement().themeList.add("badge contrast pill")
-                        getElement().setAttribute(
+                        element.themeList.add("badge contrast pill")
+                        element.setAttribute(
                             "aria-label",
                             "12 unread messages"
                         )
