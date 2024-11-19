@@ -1,6 +1,7 @@
 package shop.topup.workspace.ui.layout
 
 import com.github.mvysny.karibudsl.v10.icon
+import com.github.mvysny.kaributools.navigateTo
 import com.github.mvysny.kaributools.tooltip
 import com.vaadin.flow.component.Component
 import com.vaadin.flow.component.UI
@@ -59,13 +60,13 @@ class WorkspaceLayout(
             icon(VaadinIcon.USER)
             subMenu.apply {
                 addItem("个人信息") {
-                    UI.getCurrent().navigate(ProfileView::class.java)
+                    navigateTo<ProfileView>()
                 }.apply {
                     icon(VaadinIcon.USER_CARD)
                 }
                 addItem("退出登录") {
                     authenticatedUser.logout()
-                    UI.getCurrent().navigate(LoginView::class.java)
+                    navigateTo<LoginView>()
                 }.apply {
                     icon(VaadinIcon.SIGN_OUT)
                 }
