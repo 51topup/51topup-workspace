@@ -37,7 +37,7 @@ contexts:
   - name: 评价
     domainVisionStatement: 评价管理
     terms:
-      - name: Review
+      - name: Rate
         definition: 评价信息，包括评价内容、评价人和评价时间等，同时包括正负面标签
       - name: Ignorer
         definition: 被忽略的买家，不对该买家进行主动评价
