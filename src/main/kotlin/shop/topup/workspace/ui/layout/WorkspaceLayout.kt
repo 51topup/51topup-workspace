@@ -1,6 +1,7 @@
 package shop.topup.workspace.ui.layout
 
 import com.github.mvysny.karibudsl.v10.icon
+import com.vaadin.flow.component.Component
 import com.vaadin.flow.component.UI
 import com.vaadin.flow.component.applayout.AppLayout
 import com.vaadin.flow.component.applayout.DrawerToggle
@@ -26,6 +27,16 @@ class WorkspaceLayout(
     @Transient val authenticatedUser: AuthenticatedUser,
     @Transient val accessChecker: AccessAnnotationChecker
 ) : AppLayout() {
+
+    private lateinit var inboxCounter: Span
+
+    companion object {
+        fun getInstance(): WorkspaceLayout {
+            return UI.getCurrent().children
+                .filter { component: Component -> component.javaClass == WorkspaceLayout::class.java }.findFirst()
+                .orElse(null) as WorkspaceLayout
+        }
+    }
 
     init {
         addHeaderContent()
@@ -125,6 +136,7 @@ class WorkspaceLayout(
                             "12 unread messages"
                         )
                     }
+                    inboxCounter = suffixComponent as Span
                 }
             )
 
@@ -147,4 +159,9 @@ class WorkspaceLayout(
             add(SideNavItem("设置", OrdersView::class.java, VaadinIcon.COG_O.create()))
         }
     }
+
+    fun resetInboxCounter(number: String) {
+        inboxCounter.text = number
+    }
+
 }
