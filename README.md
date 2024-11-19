@@ -39,6 +39,7 @@ topup workspace
 - Vaadin Reference Card: https://vaadin.com/vaadin-reference-card
 - Vaadin add-ons: https://vaadin.com/directory/
 - Vaadin Icons: https://vaadin.com/docs/latest/components/icons/default-icons
+- Vaadin Cookbook: https://cookbook.vaadin.com/
 - Karibu-DSL: https://github.com/mvysny/karibu-dsl
 - Follow the tutorials at [vaadin.com/tutorials](https://vaadin.com/tutorials).
 - Create new projects at [start.vaadin.com](https://start.vaadin.com/).
