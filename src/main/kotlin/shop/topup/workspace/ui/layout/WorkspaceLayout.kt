@@ -51,7 +51,7 @@ class WorkspaceLayout(
                 }.apply {
                     icon(VaadinIcon.USER_CARD)
                 }
-                addItem("退出") {
+                addItem("退出登录") {
                     authenticatedUser.logout()
                     UI.getCurrent().navigate(LoginView::class.java)
                 }.apply {
