@@ -1,6 +1,7 @@
 package shop.topup.workspace.ui.layout
 
 import com.github.mvysny.karibudsl.v10.icon
+import com.github.mvysny.kaributools.tooltip
 import com.vaadin.flow.component.Component
 import com.vaadin.flow.component.UI
 import com.vaadin.flow.component.applayout.AppLayout
@@ -156,7 +157,9 @@ class WorkspaceLayout(
 
     private fun createFooter(): Footer {
         return Footer().apply {
-            add(SideNavItem("设置", OrdersView::class.java, VaadinIcon.COG_O.create()))
+            add(SideNavItem(null, OrdersView::class.java, VaadinIcon.COG_O.create()).apply {
+                tooltip = "设置"
+            })
         }
     }
 
