@@ -1,11 +1,9 @@
 package shop.topup.workspace.ui.views
 
-import com.github.mvysny.karibudsl.v10.KComposite
-import com.github.mvysny.karibudsl.v10.h2
-import com.github.mvysny.karibudsl.v10.onClick
-import com.github.mvysny.karibudsl.v10.verticalLayout
+import com.github.mvysny.karibudsl.v10.*
+import com.github.mvysny.kaributools.setPrimary
+import com.vaadin.flow.component.Key
 import com.vaadin.flow.component.button.Button
-import com.vaadin.flow.component.notification.Notification
 import com.vaadin.flow.component.textfield.TextField
 import com.vaadin.flow.router.PageTitle
 import com.vaadin.flow.router.Route
@@ -26,13 +24,27 @@ class InboxView : KComposite() {
         verticalLayout(classNames = "centered-content") {
 
             h2("站内信")
+            // Use TextField for standard text input
+            nameField = textField("Messages:") {
+                addClassName("bordered")
+            }
+
+            // Use Button for a clickable button
+            greetButton = button("Reset") {
+                setPrimary()
+                addClickShortcut(Key.ENTER)
+            }
         }
     }
 
     init {
         // attach functionality to the UI components.
         // It's a good practice to keep UI functionality separated from UI definition.
-        
+
+        // Button click listeners can be defined as lambda expressions
+        greetButton.onClick {
+            WorkspaceLayout.getInstance().resetInboxCounter("${nameField.value}")
+        }
     }
 
 }
