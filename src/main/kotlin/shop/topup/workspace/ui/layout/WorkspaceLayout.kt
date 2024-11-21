@@ -1,5 +1,6 @@
 package shop.topup.workspace.ui.layout
 
+import com.github.mvysny.karibudsl.v10.horizontalLayout
 import com.github.mvysny.karibudsl.v10.icon
 import com.github.mvysny.kaributools.navigateTo
 import com.github.mvysny.kaributools.tooltip
@@ -7,7 +8,10 @@ import com.vaadin.flow.component.Component
 import com.vaadin.flow.component.UI
 import com.vaadin.flow.component.applayout.AppLayout
 import com.vaadin.flow.component.applayout.DrawerToggle
-import com.vaadin.flow.component.html.*
+import com.vaadin.flow.component.html.Div
+import com.vaadin.flow.component.html.Footer
+import com.vaadin.flow.component.html.Image
+import com.vaadin.flow.component.html.Span
 import com.vaadin.flow.component.icon.VaadinIcon
 import com.vaadin.flow.component.menubar.MenuBar
 import com.vaadin.flow.component.menubar.MenuBarVariant
@@ -16,7 +20,6 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout
 import com.vaadin.flow.component.sidenav.SideNav
 import com.vaadin.flow.component.sidenav.SideNavItem
 import com.vaadin.flow.server.auth.AccessAnnotationChecker
-import com.vaadin.flow.theme.lumo.LumoUtility
 import shop.topup.workspace.ui.security.AuthenticatedUser
 import shop.topup.workspace.ui.views.*
 
@@ -76,12 +79,8 @@ class WorkspaceLayout(
     }
 
     private fun addDrawerContent() {
-        val appName = H1("工作区").apply {
-            addClassNames(LumoUtility.FontSize.LARGE, LumoUtility.Margin.NONE)
-        }
-        val header = Header(appName)
         val scroller = Scroller(createNavigation())
-        addToDrawer(header, scroller, createFooter())
+        addToDrawer(scroller, createFooter())
     }
 
     private fun createNavigation(): Div {
@@ -141,9 +140,9 @@ class WorkspaceLayout(
                     inboxCounter = suffixComponent as Span
                 }
             )
-
+            val dashboardItem = SideNavItem("Dashboard", DashboardView::class.java, VaadinIcon.DASHBOARD.create())
             // wrapper with vertical layout
-            val navWrapper = VerticalLayout(itemsNav, ordersNav, nav).apply {
+            val navWrapper = VerticalLayout(dashboardItem, itemsNav, ordersNav, nav).apply {
                 isSpacing = true
                 setSizeUndefined()
                 itemsNav.setWidthFull()
@@ -158,8 +157,13 @@ class WorkspaceLayout(
 
     private fun createFooter(): Footer {
         return Footer().apply {
-            add(SideNavItem(null, OrdersView::class.java, VaadinIcon.COG_O.create()).apply {
-                tooltip = "设置"
+            add(horizontalLayout {
+                add(SideNavItem("设置", OrdersView::class.java, VaadinIcon.COG_O.create()).apply {
+                    tooltip = "设置"
+                })
+                add(SideNavItem("帮助", HelpView::class.java, VaadinIcon.HEADSET.create()).apply {
+                    tooltip = "帮助"
+                })
             })
         }
     }
