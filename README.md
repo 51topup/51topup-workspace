@@ -32,6 +32,7 @@ topup workspace
 * 基础技术：https://open.taobao.com/doc.htm?docId=118395&docType=1
 * 聚石塔：https://open.taobao.com/doc.htm?docId=101130&docType=1
 * 常用工具: https://open.taobao.com/docV3.htm?docId=1&docType=15
+* 闲鱼session key测试获取： https://open.api.goofish.com/authorize?response_type=token&client_id=34912212&sp=xianyu
 
 # References
 
