@@ -27,7 +27,8 @@ topup workspace
 - Code：具体功能对应的代码
 
 # 淘宝开放平台
-
+ 
+* 闲鱼开放平台: https://open.goofish.com/doc/
 * 应用管理：https://work.open.taobao.com/open-console-ec/34912212/app_app
 * 基础技术：https://open.taobao.com/doc.htm?docId=118395&docType=1
 * 聚石塔：https://open.taobao.com/doc.htm?docId=101130&docType=1
