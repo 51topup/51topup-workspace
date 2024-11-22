@@ -34,6 +34,13 @@ topup workspace
 * 聚石塔：https://open.taobao.com/doc.htm?docId=101130&docType=1
 * 常用工具: https://open.taobao.com/docV3.htm?docId=1&docType=15
 * 闲鱼session key测试获取： https://open.api.goofish.com/authorize?response_type=token&client_id=34912212&sp=xianyu
+* web网站授权模式: https://open.taobao.com/doc.htm?docId=102635&docType=1
+* 授权登录URL: https://oauth.taobao.com/authorize?response_type=code&client_id=34912212&redirect_uri=https%3A%2F%2Fxianyu.51topup.com%2Fcallback&state=1212&view=web
+             
+# 应用部署
+
+* 聚石塔: https://open.taobao.com/doc.htm?docId=101130&docType=1
+
 
 # References
 
