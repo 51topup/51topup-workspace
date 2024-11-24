@@ -27,6 +27,8 @@ contexts:
         definition: 产品信息，也就是产品的最原始信息
       - name: Item
         definition: 在销售的商品信息，包括商品的价格、库存等信息
+        aliases:
+          - 宝贝
   - name: 订单
     domainVisionStatement: 订单管理
     terms:
@@ -48,3 +50,10 @@ contexts:
         definition: 充值账号，是指卖家在供应商的充值账号，包含账号信息和余额等
       - name: RechargeRecord
         definition: 充值记录，包括充值的时间、金额、状态等
+  - name: 货源
+    domainVisionStatement: 能够提供虚拟服务的供应商信息
+    terms:
+      - name: Supplier
+        definition: 供货商，能提供虚拟服务的供应商，主要是提供各种虚拟充值服务
+      - name: VirtualGoods
+        definition: 虚拟货品，供应商提供的虚拟充值服务
