@@ -1,11 +1,10 @@
-package shop.topup.workspace.ui.views
+package shop.topup.workspace.ui.views.review
 
 import com.github.mvysny.karibudsl.v10.KComposite
 import com.github.mvysny.karibudsl.v10.h2
 import com.github.mvysny.karibudsl.v10.verticalLayout
 import com.vaadin.flow.component.button.Button
 import com.vaadin.flow.component.textfield.TextField
-import com.vaadin.flow.router.HasDynamicTitle
 import com.vaadin.flow.router.PageTitle
 import com.vaadin.flow.router.Route
 import jakarta.annotation.security.RolesAllowed
@@ -13,7 +12,7 @@ import shop.topup.workspace.ui.layout.WorkspaceLayout
 import shop.topup.workspace.ui.security.Role
 
 @RolesAllowed(Role.SELLER)
-@Route(value = "/reviews", layout = WorkspaceLayout::class)
+@Route(value = "/review/list", layout = WorkspaceLayout::class)
 @PageTitle("评价管理")
 class ReviewsView : KComposite() {
     private lateinit var nameField: TextField

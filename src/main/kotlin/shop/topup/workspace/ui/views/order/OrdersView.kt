@@ -1,4 +1,4 @@
-package shop.topup.workspace.ui.views
+package shop.topup.workspace.ui.views.order
 
 import com.github.mvysny.karibudsl.v10.*
 import com.github.mvysny.kaributools.setPrimary
@@ -6,7 +6,6 @@ import com.vaadin.flow.component.Key
 import com.vaadin.flow.component.button.Button
 import com.vaadin.flow.component.notification.Notification
 import com.vaadin.flow.component.textfield.TextField
-import com.vaadin.flow.router.HasDynamicTitle
 import com.vaadin.flow.router.PageTitle
 import com.vaadin.flow.router.Route
 import jakarta.annotation.security.RolesAllowed
@@ -14,9 +13,9 @@ import shop.topup.workspace.ui.layout.WorkspaceLayout
 import shop.topup.workspace.ui.security.Role
 
 @RolesAllowed(Role.SELLER)
-@Route(value = "/items", layout = WorkspaceLayout::class)
-@PageTitle("商品管理")
-class ItemsView : KComposite() {
+@Route(value = "/order/list", layout = WorkspaceLayout::class)
+@PageTitle("订单管理")
+class OrdersView : KComposite() {
     private lateinit var nameField: TextField
     private lateinit var greetButton: Button
 
@@ -26,12 +25,12 @@ class ItemsView : KComposite() {
         verticalLayout(classNames = "centered-content") {
 
             // Use TextField for standard text input
-            nameField = textField("Your hello") {
+            nameField = textField("Your name:") {
                 addClassName("bordered")
             }
 
             // Use Button for a clickable button
-            greetButton = button("Say hello") {
+            greetButton = button("Say main") {
                 setPrimary()
                 addClickShortcut(Key.ENTER)
             }
