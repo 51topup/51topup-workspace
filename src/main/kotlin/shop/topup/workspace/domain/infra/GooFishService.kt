@@ -2,7 +2,9 @@ package shop.topup.workspace.domain.infra
 
 import com.taobao.api.DefaultTaobaoClient
 import com.taobao.api.TaobaoClient
+import com.taobao.api.request.AlibabaIdleIsvUserQueryRequest
 import com.taobao.api.request.TopAuthTokenCreateRequest
+import com.taobao.api.response.AlibabaIdleIsvUserQueryResponse
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Service
 
@@ -23,6 +25,12 @@ class GooFishService(
         req.code = code
         val rsp = topClient.execute(req)
         return rsp.tokenResult
+    }
+
+    fun fetchSellerInfo(sessionKey: String): AlibabaIdleIsvUserQueryResponse.IdleUserApiDo {
+        val req = AlibabaIdleIsvUserQueryRequest()
+        val rsp = topClient.execute(req, sessionKey)
+        return rsp.result.data
     }
 
 }
