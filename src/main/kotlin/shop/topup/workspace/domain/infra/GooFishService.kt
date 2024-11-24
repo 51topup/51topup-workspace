@@ -2,6 +2,7 @@ package shop.topup.workspace.domain.infra
 
 import com.taobao.api.DefaultTaobaoClient
 import com.taobao.api.TaobaoClient
+import com.taobao.api.request.AlibabaIdleIsvRateCreateRequest
 import com.taobao.api.request.AlibabaIdleIsvUserQueryRequest
 import com.taobao.api.request.TopAuthTokenCreateRequest
 import com.taobao.api.response.AlibabaIdleIsvUserQueryResponse
@@ -30,6 +31,16 @@ class GooFishService(
     fun fetchSellerInfo(sessionKey: String): AlibabaIdleIsvUserQueryResponse {
         val req = AlibabaIdleIsvUserQueryRequest()
         return topClient.execute(req, sessionKey)
+    }
+
+    fun addSellerRate(sessionKey: String, orderId: Long, rate: Long, feedback: String): Boolean {
+        val req = AlibabaIdleIsvRateCreateRequest()
+        req.tradeId = orderId
+        req.rate = rate
+        req.feedback = feedback
+        req.rateType = 0L
+        val rsp = topClient.execute(req, sessionKey)
+        return rsp.isSuccess
     }
 
 }
