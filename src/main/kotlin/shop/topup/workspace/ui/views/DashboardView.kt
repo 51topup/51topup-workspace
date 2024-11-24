@@ -8,6 +8,8 @@ import com.vaadin.flow.i18n.I18NProvider.translate
 import com.vaadin.flow.router.Route
 import com.vaadin.flow.router.RouteAlias
 import jakarta.annotation.security.RolesAllowed
+import org.slf4j.Logger
+import org.slf4j.LoggerFactory
 import shop.topup.workspace.ui.layout.WorkspaceLayout
 import shop.topup.workspace.ui.security.Role
 
@@ -16,6 +18,10 @@ import shop.topup.workspace.ui.security.Role
 @Route(value = "", layout = WorkspaceLayout::class)
 @RouteAlias(value = "/workspace", layout = WorkspaceLayout::class)
 class DashboardView : KComposite() {
+    companion object {
+        val log: Logger = LoggerFactory.getLogger(DashboardView::class.java)
+    }
+
     // The main view UI definition
     private val root = ui {
         // Use custom CSS classes to apply styling. This is defined in styles.css.
@@ -28,6 +34,6 @@ class DashboardView : KComposite() {
     init {
         // attach functionality to the UI components.
         // It's a good practice to keep UI functionality separated from UI definition.
-
+        log.info("DashboardView initialized")
     }
 }
