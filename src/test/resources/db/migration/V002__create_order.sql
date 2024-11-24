@@ -1,3 +1,4 @@
+-- 闲鱼订单
 create table goo_fish_order
 (
     id               bigserial primary key,
@@ -19,3 +20,16 @@ create table goo_fish_order
     gmt_create       timestamp    not null,
     gmt_modified     timestamp    not null
 );
+
+-- 闲鱼订单评价
+create table goo_fish_order_rate
+(
+    id           bigserial primary key,
+    account_id   bigint    not null,
+    order_id     bigint    not null,
+    rate         int, -- 评价结果 1 好评 0 默认
+    feedback     varchar(256),
+    rate_type    int, -- 评价类型 1 好评 0 中评
+    gmt_create   timestamp not null,
+    gmt_modified timestamp not null
+)
