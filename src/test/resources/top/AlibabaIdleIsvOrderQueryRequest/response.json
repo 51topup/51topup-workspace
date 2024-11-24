@@ -1,0 +1,41 @@
+{
+  "alibaba_idle_isv_order_query_response": {
+    "result": {
+      "module": {
+        "biz_order_id": 4136909582600814246,
+        "buy_amount": 1,
+        "buyer_address": {
+          "address": "不需要收货地址",
+          "name": "不需要收货人",
+          "prov": ""
+        },
+        "buyer_nick": "LIanGBInG丶",
+        "create_time": 1732237951000,
+        "encryption_buyer_id": "HwakrkD03VdWtvlwW4L4vA==",
+        "encryption_seller_id": "EQ3o417RVtcnj8XhLLPhjA==",
+        "idle_biz_code": "7000",
+        "item": {
+          "item_id": 736578749663,
+          "pic_url": "https:\/\/gw.alicdn.com\/bao\/uploaded\/i1\/O1CN018vnQmM1vRSFfVoPpL_!!2-fleamarket.png",
+          "price": 191,
+          "title": "【直充快充优】1日卡，腾讯QQ音乐豪华绿钻1天卡，1日卡"
+        },
+        "logistics": {
+          "express_comp_name": "普通交易",
+          "express_no": "0000"
+        },
+        "order_status": 3,
+        "order_sub_status": "10000031",
+        "out_pay_id": "2024112223001102701449302275",
+        "pay_time": 1732237958000,
+        "payment": 191,
+        "post_fee": 0,
+        "seller_nick": "乐乐哈哈",
+        "ship_time": 1732237959000,
+        "x_global_biz_code": "virtual|autoRecharge|onlineService"
+      },
+      "success": true
+    },
+    "request_id": "15ru25qm52ma4"
+  }
+}
