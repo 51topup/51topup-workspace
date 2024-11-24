@@ -17,15 +17,18 @@ create table account
 
 create table goofish_profile
 (
-    id                       bigserial primary key,
-    account_id               bigint       not null,
-    user_id                  varchar(100) not null,
-    user_nick                varchar(100) not null,
-    expire_time              timestamp    not null,
-    access_token             varchar(100) not null,
-    refresh_token            varchar(100) not null,
-    refresh_token_valid_time timestamp    not null,
-    status                   int          not null, -- 0: normal
-    created_at               timestamp    not null,
-    updated_at               timestamp    not null
+    id                   bigserial primary key,
+    account_id           bigint       not null,
+    taobao_user_id       varchar(100) not null,
+    taobao_user_nick     varchar(100) not null,
+    taobao_open_uid      varchar(100) not null,
+    sub_taobao_user_nick varchar(100) not null,
+    sub_taobao_user_id   varchar(100) not null,
+    access_token         varchar(100) not null,
+    expires_in           timestamp    not null,
+    refresh_token        varchar(100) not null,
+    re_expires_in        timestamp    not null,
+    status               int          not null, -- 0: normal
+    created_at           timestamp    not null,
+    updated_at           timestamp    not null
 );
