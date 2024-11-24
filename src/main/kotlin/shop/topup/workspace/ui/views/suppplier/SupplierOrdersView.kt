@@ -1,0 +1,34 @@
+package shop.topup.workspace.ui.views.suppplier
+
+import com.github.mvysny.karibudsl.v10.KComposite
+import com.github.mvysny.karibudsl.v10.h2
+import com.github.mvysny.karibudsl.v10.verticalLayout
+import com.vaadin.flow.component.button.Button
+import com.vaadin.flow.component.textfield.TextField
+import com.vaadin.flow.router.PageTitle
+import com.vaadin.flow.router.Route
+import jakarta.annotation.security.RolesAllowed
+import shop.topup.workspace.ui.layout.WorkspaceLayout
+import shop.topup.workspace.ui.security.Role
+
+@RolesAllowed(Role.SELLER)
+@Route(value = "/supplier/orders", layout = WorkspaceLayout::class)
+@PageTitle("货源订单")
+class SupplierOrdersView : KComposite() {
+    private lateinit var nameField: TextField
+    private lateinit var greetButton: Button
+
+    // The main view UI definition
+    private val root = ui {
+        // Use custom CSS classes to apply styling. This is defined in styles.css.
+        verticalLayout(classNames = "centered-content") {
+            h2("货源商品")
+        }
+    }
+
+    init {
+        // attach functionality to the UI components.
+        // It's a good practice to keep UI functionality separated from UI definition.
+    }
+
+}
