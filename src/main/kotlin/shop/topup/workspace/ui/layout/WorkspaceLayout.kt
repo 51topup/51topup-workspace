@@ -22,6 +22,17 @@ import com.vaadin.flow.component.sidenav.SideNavItem
 import com.vaadin.flow.server.auth.AccessAnnotationChecker
 import shop.topup.workspace.ui.security.AuthenticatedUser
 import shop.topup.workspace.ui.views.*
+import shop.topup.workspace.ui.views.buyer.BlackListView
+import shop.topup.workspace.ui.views.buyer.GrayListView
+import shop.topup.workspace.ui.views.item.ItemTemplatesView
+import shop.topup.workspace.ui.views.item.ItemsView
+import shop.topup.workspace.ui.views.order.OrdersView
+import shop.topup.workspace.ui.views.review.ReviewStrategyView
+import shop.topup.workspace.ui.views.review.ReviewsView
+import shop.topup.workspace.ui.views.suppplier.SupplierAccountsView
+import shop.topup.workspace.ui.views.suppplier.SupplierOrdersView
+import shop.topup.workspace.ui.views.suppplier.UploadGoodsToSaleView
+import shop.topup.workspace.ui.views.suppplier.VirtualGoodsView
 
 /**
  * workspace layout
@@ -85,27 +96,9 @@ class WorkspaceLayout(
 
     private fun createNavigation(): Div {
         val div = Div().apply {
-            // 商品
-            val itemsNav = SideNav().apply {
-                label = "商品列表"
-                addItem(
-                    SideNavItem(
-                        "在售商品",
-                        ItemsView::class.java,
-                        VaadinIcon.CUBES.create()
-                    )
-                )
-                addItem(
-                    SideNavItem(
-                        "下架商品",
-                        ItemsView::class.java,
-                        VaadinIcon.CUBES.create()
-                    )
-                )
-            }
             //订单
             val ordersNav = SideNav().apply {
-                label = "交易管理"
+                label = "订单"
                 addItem(
                     SideNavItem(
                         "订单列表",
@@ -113,18 +106,97 @@ class WorkspaceLayout(
                         VaadinIcon.CASH.create()
                     )
                 )
+            }
+            // 宝贝
+            val itemsNav = SideNav().apply {
+                label = "宝贝"
                 addItem(
                     SideNavItem(
-                        "评价管理",
+                        "商品",
+                        ItemsView::class.java,
+                        VaadinIcon.GRID_BIG_O.create()
+                    )
+                )
+                addItem(
+                    SideNavItem(
+                        "模板",
+                        ItemTemplatesView::class.java,
+                        VaadinIcon.CLIPBOARD_TEXT.create()
+                    )
+                )
+            }
+            // 货源
+            val supplierNav = SideNav().apply {
+                label = "货源"
+                addItem(
+                    SideNavItem(
+                        "货源商品",
+                        VirtualGoodsView::class.java,
+                        VaadinIcon.LIST_UL.create()
+                    )
+                )
+                addItem(
+                    SideNavItem(
+                        "货源账号",
+                        SupplierAccountsView::class.java,
+                        VaadinIcon.USERS.create()
+                    )
+                )
+                addItem(
+                    SideNavItem(
+                        "货源订单",
+                        SupplierOrdersView::class.java,
+                        VaadinIcon.BOOK_DOLLAR.create()
+                    )
+                )
+                addItem(
+                    SideNavItem(
+                        "批量上货",
+                        UploadGoodsToSaleView::class.java,
+                        VaadinIcon.ARROW_CIRCLE_UP.create()
+                    )
+                )
+            }
+            // 买家
+            val buyerNav = SideNav().apply {
+                label = "宝贝"
+                addItem(
+                    SideNavItem(
+                        "黑名单",
+                        BlackListView::class.java,
+                        VaadinIcon.LIST_OL.create()
+                    )
+                )
+                addItem(
+                    SideNavItem(
+                        "灰名单",
+                        GrayListView::class.java,
+                        VaadinIcon.LIST_SELECT.create()
+                    )
+                )
+            }
+            // 评价
+            val rateNav = SideNav().apply {
+                label = "评价"
+                addItem(
+                    SideNavItem(
+                        "自动评价策略",
+                        ReviewStrategyView::class.java,
+                        VaadinIcon.AUTOMATION.create()
+                    )
+                )
+                addItem(
+                    SideNavItem(
+                        "批量评价",
                         ReviewsView::class.java,
-                        VaadinIcon.COMMENTS.create()
+                        VaadinIcon.COMMENT_ELLIPSIS.create()
                     )
                 )
             }
             // 其他
             val nav = SideNav()
-            //nav.addItem(SideNavItem("服务商管理", OrdersView::class.java, VaadinIcon.ARCHIVES.create()))
-            nav.addItem(SideNavItem("店铺管理", ShopsView::class.java, VaadinIcon.SHOP.create()))
+            nav.addItem(SideNavItem("店铺", ShopsView::class.java, VaadinIcon.SHOP.create()))
+            nav.addItem(SideNavItem("售后", CustomServiceView::class.java, VaadinIcon.HEADSET.create()))
             nav.addItem(
                 SideNavItem(
                     "站内信", InboxView::class.java,
@@ -142,11 +214,22 @@ class WorkspaceLayout(
             )
             val dashboardItem = SideNavItem("Dashboard", DashboardView::class.java, VaadinIcon.DASHBOARD.create())
             // wrapper with vertical layout
-            val navWrapper = VerticalLayout(dashboardItem, itemsNav, ordersNav, nav).apply {
+            val navWrapper = VerticalLayout(
+                dashboardItem,
+                ordersNav,
+                itemsNav,
+                supplierNav,
+                buyerNav,
+                rateNav,
+                nav
+            ).apply {
                 isSpacing = true
                 setSizeUndefined()
                 itemsNav.setWidthFull()
                 ordersNav.setWidthFull()
+                supplierNav.setWidthFull()
+                buyerNav.setWidthFull()
+                rateNav.setWidthFull()
                 nav.setWidthFull()
             }
             add(navWrapper)
