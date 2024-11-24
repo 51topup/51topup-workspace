@@ -1,0 +1,2 @@
+### callback for GooFish login callback
+GET http://localhost:8080/goofish/callback?code=xxxxx&state=xxxxx
