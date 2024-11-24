@@ -17,9 +17,11 @@ import javax.crypto.spec.SecretKeySpec
 
 @EnableWebSecurity
 @Configuration
-class SecurityConfiguration : VaadinWebSecurity() {
-    @Value("\${jwt.auth.secret}")
-    lateinit var jwtAuthSecret: String
+class SecurityConfiguration(
+    @Value("\${jwt.auth.secret}") val jwtAuthSecret: String,
+    @Value("\${jwt.issuer}") val jwtIssuer: String,
+    @Value("\${jwt.expiration}") val expirationSeconds: Long
+) : VaadinWebSecurity() {
 
     override fun configure(http: HttpSecurity) {
         http.authorizeHttpRequests { auth ->
@@ -35,7 +37,8 @@ class SecurityConfiguration : VaadinWebSecurity() {
         setStatelessAuthentication(
             http,
             SecretKeySpec(jwtAuthSecret.toByteArray(), JwsAlgorithms.HS256),
-            "shop.51topup",  604800 // 7 days : 7 * 24 * 60 * 60
+            jwtIssuer,
+            expirationSeconds
         )
     }
 
