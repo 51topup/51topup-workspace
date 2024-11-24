@@ -27,7 +27,7 @@ topup workspace
 - Code：具体功能对应的代码
 
 # 淘宝开放平台
- 
+
 * 闲鱼开放平台: https://open.goofish.com/doc/
 * 应用管理：https://work.open.taobao.com/open-console-ec/34912212/app_app
 * 基础技术：https://open.taobao.com/doc.htm?docId=118395&docType=1
@@ -35,12 +35,17 @@ topup workspace
 * 常用工具: https://open.taobao.com/docV3.htm?docId=1&docType=15
 * 闲鱼session key测试获取： https://open.api.goofish.com/authorize?response_type=token&client_id=34912212&sp=xianyu
 * web网站授权模式: https://open.taobao.com/doc.htm?docId=102635&docType=1
-* 授权登录URL: https://oauth.taobao.com/authorize?response_type=code&client_id=34912212&redirect_uri=https%3A%2F%2Fxianyu.51topup.com%2Fcallback&state=1212&view=web
-             
+*
+授权登录URL: https://oauth.taobao.com/authorize?response_type=code&client_id=34912212&redirect_uri=https%3A%2F%2Fxianyu.51topup.com%2Fcallback&state=1212&view=web
+
 # 应用部署
 
 * 聚石塔: https://open.taobao.com/doc.htm?docId=101130&docType=1
 
+# 项目URLs
+
+- 闲鱼Oauth登录回调： http://localhost:8080/goofish/callback?code=xxxxx&state=1212
+- 项目登录: http://localhost:8080/login
 
 # References
 
