@@ -13,6 +13,7 @@ import com.vaadin.flow.server.VaadinService
 import com.vaadin.flow.server.auth.AnonymousAllowed
 import com.vaadin.flow.theme.lumo.LumoUtility
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.beans.factory.annotation.Value
 import shop.topup.workspace.ui.security.AuthenticatedUser
 import java.net.URLEncoder
 
@@ -20,7 +21,10 @@ import java.net.URLEncoder
 @Route(value = "/login")
 @PageTitle("Login")
 @AnonymousAllowed
-class LoginView(loginI18n: LoginI18n) : LoginOverlay(loginI18n), BeforeEnterObserver {
+class LoginView(
+    loginI18n: LoginI18n,
+    @Value("\${top.app.key}") val topAppKey: String
+) : LoginOverlay(loginI18n), BeforeEnterObserver {
     @Autowired
     @Transient
     lateinit var authenticatedUser: AuthenticatedUser
@@ -50,10 +54,9 @@ class LoginView(loginI18n: LoginI18n) : LoginOverlay(loginI18n), BeforeEnterObse
         isError = beforeEnterEvent.location.queryParameters.parameters.containsKey("error")
     }
 
-    fun gooFishLoginUrl(): String {
-        val redirectUrl = URLEncoder.encode("https://xianyu.51topup.com/callback", "UTF-8")
+    private fun gooFishLoginUrl(): String {
+        val redirectUrl = URLEncoder.encode("https://www.51topup.com/goofish/callback", "UTF-8")
         val state = URLEncoder.encode("{\"origin\": \"main\"}", "UTF-8")
-        val clientId = "34912212"
-        return "https://oauth.taobao.com/authorize?response_type=code&client_id=${clientId}&redirect_uri=${redirectUrl}&state=${state}&view=web"
+        return "https://oauth.taobao.com/authorize?response_type=code&client_id=${topAppKey}&redirect_uri=${redirectUrl}&state=${state}&view=web"
     }
 }
