@@ -24,6 +24,7 @@ class SecurityConfiguration : VaadinWebSecurity() {
     override fun configure(http: HttpSecurity) {
         http.authorizeHttpRequests { auth ->
             auth.requestMatchers(AntPathRequestMatcher("/assets/**")).permitAll()
+            auth.requestMatchers(AntPathRequestMatcher("/goofish/**")).permitAll()
         }
         super.configure(http)
         // This is important to register your login view to the
