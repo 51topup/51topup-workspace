@@ -46,6 +46,11 @@ topup workspace
 
 - 闲鱼Oauth登录回调： http://localhost:8080/goofish/callback?code=xxxxx&state=1212
 - 项目登录: http://localhost:8080/login
+           
+# TOP API问题
+
+- `alibaba.idle.isv.servicerate.bizquery( 根据业务Id查询闲鱼服务评价列表信息 )` 提示成功，无数据返回
+- `alibaba.idle.isv.item.query( 服务商闲鱼商品查询 )` 无权限 `"sub_code":"TOP_NOT_CURRENT_INSPECT_ITEM","sub_msg":"非当前服务商商品"`
 
 # References
 
