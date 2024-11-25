@@ -1,15 +1,16 @@
 -- 供货商表
 create table supplier
 (
-    id          bigserial primary key,
-    avatar      varchar(256),
-    name        varchar(100) not null,
-    description text,
-    url         varchar(256),
-    api_url     varchar(256),
-    status      int          not null,
-    created_at  timestamp    not null,
-    updated_at  timestamp    not null
+    id           bigserial primary key,
+    avatar       varchar(256),
+    name         varchar(100) not null,
+    description  text,
+    url          varchar(256),
+    api_url      varchar(256),
+    submitted_by bigint       not null,
+    status       int          not null,
+    created_at   timestamp    not null,
+    updated_at   timestamp    not null
 );
 
 -- 供货商商品表
