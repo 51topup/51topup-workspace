@@ -34,4 +34,4 @@ create table goo_fish_order_rate
     reviewer_type int,          -- 评价人类型 1 买家 0 卖家
     gmt_create    timestamp not null,
     gmt_modified  timestamp not null
-)
+);
