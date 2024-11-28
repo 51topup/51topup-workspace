@@ -307,6 +307,9 @@
                         <arg>-Xjvm-default=all</arg>
                         <arg>-Xuse-14-inline-classes-mangling-scheme</arg>
                         <arg>-Xcontext-receivers</arg>
+                        <arg>-Xwhen-guards</arg>
+                        <arg>-Xnon-local-break-continue</arg>
+                        <arg>-Xmulti-dollar-interpolation</arg>
                     </args>
                     <jvmTarget>21</jvmTarget>
                     <apiVersion>2.0</apiVersion>
