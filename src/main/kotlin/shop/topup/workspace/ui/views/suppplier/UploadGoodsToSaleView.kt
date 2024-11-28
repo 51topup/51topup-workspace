@@ -11,7 +11,7 @@ import jakarta.annotation.security.RolesAllowed
 import shop.topup.workspace.ui.layout.WorkspaceLayout
 import shop.topup.workspace.ui.security.Role
 
-@RolesAllowed(Role.USER)
+@RolesAllowed(Role.SELLER)
 @Route(value = "/supplier/upload-goods", layout = WorkspaceLayout::class)
 @PageTitle("商品上架")
 class UploadGoodsToSaleView : KComposite() {

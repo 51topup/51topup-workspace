@@ -2,13 +2,13 @@
 <!DOCTYPE dataset SYSTEM "database.dtd">
 <dataset>
     <account id="1" nick="admin1" mobile_phone="18611111111"
-             hashed_password="$2a$10$LR//g1U7ke9hVSHzMVCj3uONzweP3MrOknVIv1tqqEpZAkyoEpOVm" first_name="管一"
+             hashed_password="$2a$10$LR//g1U7ke9hVSHzMVCj3uONzweP3MrOknVIv1tqqEpZAkyoEpOVm" first_name="卖家1"
              last_name="陈"
-             roles="USER,ADMIN" type="0" status="1" flag="0"
+             roles="SELLER" type="0" status="1" flag="0"
              created_at="2024-11-11 11:11:11" updated_at="2024-11-11 11:11:11"/>
     <account id="2" nick="admin2" mobile_phone="18667135137"
-             hashed_password="$2a$10$LR//g1U7ke9hVSHzMVCj3uONzweP3MrOknVIv1tqqEpZAkyoEpOVm" first_name="管二"
-             last_name="陈"
-             roles="USER,ADMIN" type="1" status="1" flag="0"
+             hashed_password="$2a$10$LR//g1U7ke9hVSHzMVCj3uONzweP3MrOknVIv1tqqEpZAkyoEpOVm" first_name="卖家1"
+             last_name="SELLER"
+             roles="SELLER" type="1" status="1" flag="0"
              created_at="2024-11-11 11:11:11" updated_at="2024-11-11 11:11:11"/>
 </dataset>

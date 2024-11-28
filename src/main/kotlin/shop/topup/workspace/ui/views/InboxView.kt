@@ -11,7 +11,7 @@ import jakarta.annotation.security.RolesAllowed
 import shop.topup.workspace.ui.layout.WorkspaceLayout
 import shop.topup.workspace.ui.security.Role
 
-@RolesAllowed(Role.USER)
+@RolesAllowed(Role.SELLER)
 @Route(value = "/inbox", layout = WorkspaceLayout::class)
 @PageTitle("站内信")
 class InboxView : KComposite() {

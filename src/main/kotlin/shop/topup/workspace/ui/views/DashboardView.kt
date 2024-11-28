@@ -14,7 +14,7 @@ import shop.topup.workspace.ui.layout.WorkspaceLayout
 import shop.topup.workspace.ui.security.Role
 
 
-@RolesAllowed(Role.USER)
+@RolesAllowed(Role.SELLER)
 @Route(value = "", layout = WorkspaceLayout::class)
 @RouteAlias(value = "/workspace", layout = WorkspaceLayout::class)
 class DashboardView : KComposite() {

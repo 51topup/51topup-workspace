@@ -12,7 +12,7 @@ import jakarta.annotation.security.RolesAllowed
 import shop.topup.workspace.ui.layout.WorkspaceLayout
 import shop.topup.workspace.ui.security.Role
 
-@RolesAllowed(Role.USER)
+@RolesAllowed(Role.SELLER)
 @Route(value = "/buyer/gray-list", layout = WorkspaceLayout::class)
 @PageTitle("买家灰名单")
 class GrayListView : KComposite() {
