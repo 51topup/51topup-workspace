@@ -18,7 +18,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>21</java.version>
-        <kotlin.version>2.1.0-RC2</kotlin.version>
+        <kotlin.version>2.1.0</kotlin.version>
         <vaadin.version>24.5.5</vaadin.version>
         <karibu-dsl.version>2.1.4</karibu-dsl.version>
         <vaadin-jooq.version>2.1.1</vaadin-jooq.version>
