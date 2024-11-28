@@ -12,7 +12,7 @@ import jakarta.annotation.security.RolesAllowed
 import shop.topup.workspace.ui.layout.WorkspaceLayout
 import shop.topup.workspace.ui.security.Role
 
-@RolesAllowed(Role.SELLER)
+@RolesAllowed(Role.USER)
 @Route(value = "/item/templates", layout = WorkspaceLayout::class)
 @PageTitle("商品模板")
 class ItemTemplatesView : KComposite() {

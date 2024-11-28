@@ -11,7 +11,7 @@ import jakarta.annotation.security.RolesAllowed
 import shop.topup.workspace.ui.layout.WorkspaceLayout
 import shop.topup.workspace.ui.security.Role
 
-@RolesAllowed(Role.SELLER)
+@RolesAllowed(Role.USER)
 @Route(value = "/help", layout = WorkspaceLayout::class)
 @PageTitle("帮助")
 class HelpView : KComposite() {

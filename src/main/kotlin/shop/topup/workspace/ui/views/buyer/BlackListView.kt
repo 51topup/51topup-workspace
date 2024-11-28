@@ -6,14 +6,13 @@ import com.vaadin.flow.component.Key
 import com.vaadin.flow.component.button.Button
 import com.vaadin.flow.component.notification.Notification
 import com.vaadin.flow.component.textfield.TextField
-import com.vaadin.flow.router.HasDynamicTitle
 import com.vaadin.flow.router.PageTitle
 import com.vaadin.flow.router.Route
 import jakarta.annotation.security.RolesAllowed
 import shop.topup.workspace.ui.layout.WorkspaceLayout
 import shop.topup.workspace.ui.security.Role
 
-@RolesAllowed(Role.SELLER)
+@RolesAllowed(Role.USER)
 @Route(value = "/buyer/black-list", layout = WorkspaceLayout::class)
 @PageTitle("买家黑名单")
 class BlackListView : KComposite() {
