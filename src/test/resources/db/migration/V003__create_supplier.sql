@@ -13,18 +13,35 @@ create table supplier
     updated_at   timestamp    not null
 );
 
--- 供货商商品表
-create table supplier_goods
+-- 供货商商平类目
+create table supplier_catalogs
 (
     id          bigserial primary key,
     supplier_id bigint       not null,
-    title       varchar(100) not null,
-    main_pic    varchar(256),
-    description text,
-    price       int          not null,
-    status      int          not null,
+    group_id    int,
+    name        varchar(200) not null,
+    img_url     varchar(256),
     created_at  timestamp    not null,
     updated_at  timestamp    not null
+);
+
+-- 供货商商品表
+create table supplier_goods
+(
+    id           bigserial primary key,
+    supplier_id  bigint       not null,
+    catalog_id   int,
+    name         varchar(100) not null,
+    main_pic     varchar(256),
+    description  text,
+    price        float        not null,
+    market_price float,
+    stock        int          not null,
+    buy_min_num  int          not null,
+    type         int          not null,
+    status       int          not null,
+    created_at   timestamp    not null,
+    updated_at   timestamp    not null
 );
 
 -- 供货商订单表
