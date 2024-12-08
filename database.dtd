@@ -1,6 +1,14 @@
 <!ELEMENT dataset (
     account*,
-    flyway_schema_history*)>
+    flyway_schema_history*,
+    goo_fish_order*,
+    goo_fish_order_rate*,
+    goofish_profile*,
+    supplier*,
+    supplier_account*,
+    supplier_api_info*,
+    supplier_catalog*,
+    supplier_goods*)>
 
 <!ELEMENT account EMPTY>
 <!ATTLIST account
@@ -31,5 +39,129 @@
     installed_on CDATA #IMPLIED
     execution_time CDATA #REQUIRED
     success CDATA #REQUIRED
+>
+
+<!ELEMENT goo_fish_order EMPTY>
+<!ATTLIST goo_fish_order
+    id CDATA #IMPLIED
+    account_id CDATA #REQUIRED
+    order_id CDATA #REQUIRED
+    item_id CDATA #REQUIRED
+    item_pic_url CDATA #REQUIRED
+    item_title CDATA #REQUIRED
+    item_price CDATA #REQUIRED
+    buy_amount CDATA #REQUIRED
+    payment CDATA #REQUIRED
+    post_fee CDATA #REQUIRED
+    pay_time CDATA #IMPLIED
+    ship_time CDATA #IMPLIED
+    buyer_nick CDATA #REQUIRED
+    seller_nick CDATA #REQUIRED
+    status CDATA #REQUIRED
+    logistics_status CDATA #REQUIRED
+    gmt_create CDATA #REQUIRED
+    gmt_modified CDATA #REQUIRED
+>
+
+<!ELEMENT goo_fish_order_rate EMPTY>
+<!ATTLIST goo_fish_order_rate
+    id CDATA #IMPLIED
+    account_id CDATA #REQUIRED
+    order_id CDATA #REQUIRED
+    rate CDATA #IMPLIED
+    feedback CDATA #IMPLIED
+    rate_type CDATA #IMPLIED
+    reviewer_nick CDATA #IMPLIED
+    reviewer_type CDATA #IMPLIED
+    gmt_create CDATA #REQUIRED
+    gmt_modified CDATA #REQUIRED
+>
+
+<!ELEMENT goofish_profile EMPTY>
+<!ATTLIST goofish_profile
+    id CDATA #IMPLIED
+    account_id CDATA #REQUIRED
+    taobao_user_id CDATA #REQUIRED
+    taobao_user_nick CDATA #REQUIRED
+    taobao_open_uid CDATA #REQUIRED
+    sub_taobao_user_nick CDATA #REQUIRED
+    sub_taobao_user_id CDATA #REQUIRED
+    access_token CDATA #REQUIRED
+    expires_in CDATA #REQUIRED
+    refresh_token CDATA #REQUIRED
+    re_expires_in CDATA #REQUIRED
+    status CDATA #REQUIRED
+    created_at CDATA #REQUIRED
+    updated_at CDATA #REQUIRED
+>
+
+<!ELEMENT supplier EMPTY>
+<!ATTLIST supplier
+    id CDATA #IMPLIED
+    avatar CDATA #IMPLIED
+    name CDATA #REQUIRED
+    description CDATA #IMPLIED
+    url CDATA #IMPLIED
+    submitted_by CDATA #REQUIRED
+    status CDATA #REQUIRED
+    created_at CDATA #IMPLIED
+    updated_at CDATA #IMPLIED
+>
+
+<!ELEMENT supplier_account EMPTY>
+<!ATTLIST supplier_account
+    id CDATA #IMPLIED
+    supplier_id CDATA #REQUIRED
+    seller_id CDATA #REQUIRED
+    api_key CDATA #REQUIRED
+    api_secret CDATA #REQUIRED
+    api_token CDATA #REQUIRED
+    balance CDATA #REQUIRED
+    status CDATA #REQUIRED
+    created_at CDATA #REQUIRED
+    updated_at CDATA #REQUIRED
+>
+
+<!ELEMENT supplier_api_info EMPTY>
+<!ATTLIST supplier_api_info
+    id CDATA #IMPLIED
+    api_url CDATA #IMPLIED
+    api_key CDATA #IMPLIED
+    api_secret CDATA #IMPLIED
+    api_token CDATA #IMPLIED
+    status CDATA #REQUIRED
+    updated_at CDATA #IMPLIED
+>
+
+<!ELEMENT supplier_catalog EMPTY>
+<!ATTLIST supplier_catalog
+    id CDATA #IMPLIED
+    supplier_id CDATA #REQUIRED
+    group_id CDATA #REQUIRED
+    name CDATA #REQUIRED
+    img_url CDATA #IMPLIED
+    status CDATA #IMPLIED
+    created_at CDATA #IMPLIED
+    updated_at CDATA #IMPLIED
+>
+
+<!ELEMENT supplier_goods EMPTY>
+<!ATTLIST supplier_goods
+    id CDATA #IMPLIED
+    supplier_id CDATA #REQUIRED
+    catalog_id CDATA #REQUIRED
+    supplier_goods_id CDATA #REQUIRED
+    supplier_group_id CDATA #REQUIRED
+    name CDATA #REQUIRED
+    main_pic CDATA #IMPLIED
+    description CDATA #IMPLIED
+    price CDATA #REQUIRED
+    market_price CDATA #IMPLIED
+    stock CDATA #REQUIRED
+    buy_min_num CDATA #REQUIRED
+    type CDATA #REQUIRED
+    status CDATA #REQUIRED
+    created_at CDATA #IMPLIED
+    updated_at CDATA #IMPLIED
 >
 
