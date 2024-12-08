@@ -42,6 +42,7 @@ class GooFishController(
             //todo validate code by TOP platform
 //            val resultJsonText = goofishService.getAccessTokenResult(it)
 //            OBJECT_MAPPER.readValue<AccessTokenResult>(resultJsonText)
+//            goofishService.allowPermits(sessionKey);
             val jwt = jwtService.generate("seller1", "SELLER")
             val headerAndPayload = jwt.substring(0, jwt.lastIndexOf("."))
             val signature = jwt.substring(jwt.lastIndexOf(".") + 1)
