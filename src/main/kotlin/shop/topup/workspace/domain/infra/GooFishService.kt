@@ -30,6 +30,9 @@ class GooFishService(
         return topClient.execute(req)
     }
 
+    /**
+     * 闲鱼卖家与服务商关系绑定，用于业务数据分发/授权校验/消息通知鉴权
+     */
     fun allowPermits(sessionKey: String) {
         val request = AlibabaIdleUserPermitRequest().apply {
             val obj1 = UserGrantRequest()
