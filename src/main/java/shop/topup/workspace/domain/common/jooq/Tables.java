@@ -5,6 +5,14 @@ package shop.topup.workspace.domain.common.jooq;
 
 
 import shop.topup.workspace.domain.common.jooq.tables.Account;
+import shop.topup.workspace.domain.common.jooq.tables.GooFishOrder;
+import shop.topup.workspace.domain.common.jooq.tables.GooFishOrderRate;
+import shop.topup.workspace.domain.common.jooq.tables.GoofishProfile;
+import shop.topup.workspace.domain.common.jooq.tables.Supplier;
+import shop.topup.workspace.domain.common.jooq.tables.SupplierAccount;
+import shop.topup.workspace.domain.common.jooq.tables.SupplierApiInfo;
+import shop.topup.workspace.domain.common.jooq.tables.SupplierCatalog;
+import shop.topup.workspace.domain.common.jooq.tables.SupplierGoods;
 
 
 /**
@@ -17,4 +25,44 @@ public class Tables {
      * The table <code>public.account</code>.
      */
     public static final Account ACCOUNT = Account.ACCOUNT;
+
+    /**
+     * The table <code>public.goo_fish_order</code>.
+     */
+    public static final GooFishOrder GOO_FISH_ORDER = GooFishOrder.GOO_FISH_ORDER;
+
+    /**
+     * The table <code>public.goo_fish_order_rate</code>.
+     */
+    public static final GooFishOrderRate GOO_FISH_ORDER_RATE = GooFishOrderRate.GOO_FISH_ORDER_RATE;
+
+    /**
+     * The table <code>public.goofish_profile</code>.
+     */
+    public static final GoofishProfile GOOFISH_PROFILE = GoofishProfile.GOOFISH_PROFILE;
+
+    /**
+     * The table <code>public.supplier</code>.
+     */
+    public static final Supplier SUPPLIER = Supplier.SUPPLIER;
+
+    /**
+     * The table <code>public.supplier_account</code>.
+     */
+    public static final SupplierAccount SUPPLIER_ACCOUNT = SupplierAccount.SUPPLIER_ACCOUNT;
+
+    /**
+     * The table <code>public.supplier_api_info</code>.
+     */
+    public static final SupplierApiInfo SUPPLIER_API_INFO = SupplierApiInfo.SUPPLIER_API_INFO;
+
+    /**
+     * The table <code>public.supplier_catalog</code>.
+     */
+    public static final SupplierCatalog SUPPLIER_CATALOG = SupplierCatalog.SUPPLIER_CATALOG;
+
+    /**
+     * The table <code>public.supplier_goods</code>.
+     */
+    public static final SupplierGoods SUPPLIER_GOODS = SupplierGoods.SUPPLIER_GOODS;
 }

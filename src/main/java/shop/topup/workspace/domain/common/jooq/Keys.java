@@ -10,7 +10,23 @@ import org.jooq.impl.DSL;
 import org.jooq.impl.Internal;
 
 import shop.topup.workspace.domain.common.jooq.tables.Account;
+import shop.topup.workspace.domain.common.jooq.tables.GooFishOrder;
+import shop.topup.workspace.domain.common.jooq.tables.GooFishOrderRate;
+import shop.topup.workspace.domain.common.jooq.tables.GoofishProfile;
+import shop.topup.workspace.domain.common.jooq.tables.Supplier;
+import shop.topup.workspace.domain.common.jooq.tables.SupplierAccount;
+import shop.topup.workspace.domain.common.jooq.tables.SupplierApiInfo;
+import shop.topup.workspace.domain.common.jooq.tables.SupplierCatalog;
+import shop.topup.workspace.domain.common.jooq.tables.SupplierGoods;
 import shop.topup.workspace.domain.common.jooq.tables.records.AccountRecord;
+import shop.topup.workspace.domain.common.jooq.tables.records.GooFishOrderRateRecord;
+import shop.topup.workspace.domain.common.jooq.tables.records.GooFishOrderRecord;
+import shop.topup.workspace.domain.common.jooq.tables.records.GoofishProfileRecord;
+import shop.topup.workspace.domain.common.jooq.tables.records.SupplierAccountRecord;
+import shop.topup.workspace.domain.common.jooq.tables.records.SupplierApiInfoRecord;
+import shop.topup.workspace.domain.common.jooq.tables.records.SupplierCatalogRecord;
+import shop.topup.workspace.domain.common.jooq.tables.records.SupplierGoodsRecord;
+import shop.topup.workspace.domain.common.jooq.tables.records.SupplierRecord;
 
 
 /**
@@ -25,4 +41,12 @@ public class Keys {
     // -------------------------------------------------------------------------
 
     public static final UniqueKey<AccountRecord> ACCOUNT_PKEY = Internal.createUniqueKey(Account.ACCOUNT, DSL.name("account_pkey"), new TableField[] { Account.ACCOUNT.ID }, true);
+    public static final UniqueKey<GooFishOrderRecord> GOO_FISH_ORDER_PKEY = Internal.createUniqueKey(GooFishOrder.GOO_FISH_ORDER, DSL.name("goo_fish_order_pkey"), new TableField[] { GooFishOrder.GOO_FISH_ORDER.ID }, true);
+    public static final UniqueKey<GooFishOrderRateRecord> GOO_FISH_ORDER_RATE_PKEY = Internal.createUniqueKey(GooFishOrderRate.GOO_FISH_ORDER_RATE, DSL.name("goo_fish_order_rate_pkey"), new TableField[] { GooFishOrderRate.GOO_FISH_ORDER_RATE.ID }, true);
+    public static final UniqueKey<GoofishProfileRecord> GOOFISH_PROFILE_PKEY = Internal.createUniqueKey(GoofishProfile.GOOFISH_PROFILE, DSL.name("goofish_profile_pkey"), new TableField[] { GoofishProfile.GOOFISH_PROFILE.ID }, true);
+    public static final UniqueKey<SupplierRecord> SUPPLIER_PKEY = Internal.createUniqueKey(Supplier.SUPPLIER, DSL.name("supplier_pkey"), new TableField[] { Supplier.SUPPLIER.ID }, true);
+    public static final UniqueKey<SupplierAccountRecord> SUPPLIER_ACCOUNT_PKEY = Internal.createUniqueKey(SupplierAccount.SUPPLIER_ACCOUNT, DSL.name("supplier_account_pkey"), new TableField[] { SupplierAccount.SUPPLIER_ACCOUNT.ID }, true);
+    public static final UniqueKey<SupplierApiInfoRecord> SUPPLIER_API_INFO_PKEY = Internal.createUniqueKey(SupplierApiInfo.SUPPLIER_API_INFO, DSL.name("supplier_api_info_pkey"), new TableField[] { SupplierApiInfo.SUPPLIER_API_INFO.ID }, true);
+    public static final UniqueKey<SupplierCatalogRecord> SUPPLIER_CATALOG_PKEY = Internal.createUniqueKey(SupplierCatalog.SUPPLIER_CATALOG, DSL.name("supplier_catalog_pkey"), new TableField[] { SupplierCatalog.SUPPLIER_CATALOG.ID }, true);
+    public static final UniqueKey<SupplierGoodsRecord> SUPPLIER_GOODS_PKEY = Internal.createUniqueKey(SupplierGoods.SUPPLIER_GOODS, DSL.name("supplier_goods_pkey"), new TableField[] { SupplierGoods.SUPPLIER_GOODS.ID }, true);
 }

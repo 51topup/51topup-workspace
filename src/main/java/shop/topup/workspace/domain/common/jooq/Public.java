@@ -12,6 +12,14 @@ import org.jooq.Table;
 import org.jooq.impl.SchemaImpl;
 
 import shop.topup.workspace.domain.common.jooq.tables.Account;
+import shop.topup.workspace.domain.common.jooq.tables.GooFishOrder;
+import shop.topup.workspace.domain.common.jooq.tables.GooFishOrderRate;
+import shop.topup.workspace.domain.common.jooq.tables.GoofishProfile;
+import shop.topup.workspace.domain.common.jooq.tables.Supplier;
+import shop.topup.workspace.domain.common.jooq.tables.SupplierAccount;
+import shop.topup.workspace.domain.common.jooq.tables.SupplierApiInfo;
+import shop.topup.workspace.domain.common.jooq.tables.SupplierCatalog;
+import shop.topup.workspace.domain.common.jooq.tables.SupplierGoods;
 
 
 /**
@@ -33,6 +41,46 @@ public class Public extends SchemaImpl {
     public final Account ACCOUNT = Account.ACCOUNT;
 
     /**
+     * The table <code>public.goo_fish_order</code>.
+     */
+    public final GooFishOrder GOO_FISH_ORDER = GooFishOrder.GOO_FISH_ORDER;
+
+    /**
+     * The table <code>public.goo_fish_order_rate</code>.
+     */
+    public final GooFishOrderRate GOO_FISH_ORDER_RATE = GooFishOrderRate.GOO_FISH_ORDER_RATE;
+
+    /**
+     * The table <code>public.goofish_profile</code>.
+     */
+    public final GoofishProfile GOOFISH_PROFILE = GoofishProfile.GOOFISH_PROFILE;
+
+    /**
+     * The table <code>public.supplier</code>.
+     */
+    public final Supplier SUPPLIER = Supplier.SUPPLIER;
+
+    /**
+     * The table <code>public.supplier_account</code>.
+     */
+    public final SupplierAccount SUPPLIER_ACCOUNT = SupplierAccount.SUPPLIER_ACCOUNT;
+
+    /**
+     * The table <code>public.supplier_api_info</code>.
+     */
+    public final SupplierApiInfo SUPPLIER_API_INFO = SupplierApiInfo.SUPPLIER_API_INFO;
+
+    /**
+     * The table <code>public.supplier_catalog</code>.
+     */
+    public final SupplierCatalog SUPPLIER_CATALOG = SupplierCatalog.SUPPLIER_CATALOG;
+
+    /**
+     * The table <code>public.supplier_goods</code>.
+     */
+    public final SupplierGoods SUPPLIER_GOODS = SupplierGoods.SUPPLIER_GOODS;
+
+    /**
      * No further instances allowed
      */
     private Public() {
@@ -48,7 +96,15 @@ public class Public extends SchemaImpl {
     @Override
     public final List<Table<?>> getTables() {
         return Arrays.asList(
-            Account.ACCOUNT
+            Account.ACCOUNT,
+            GooFishOrder.GOO_FISH_ORDER,
+            GooFishOrderRate.GOO_FISH_ORDER_RATE,
+            GoofishProfile.GOOFISH_PROFILE,
+            Supplier.SUPPLIER,
+            SupplierAccount.SUPPLIER_ACCOUNT,
+            SupplierApiInfo.SUPPLIER_API_INFO,
+            SupplierCatalog.SUPPLIER_CATALOG,
+            SupplierGoods.SUPPLIER_GOODS
         );
     }
 }
