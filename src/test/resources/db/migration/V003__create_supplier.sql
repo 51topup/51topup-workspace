@@ -14,7 +14,7 @@ create table supplier
 );
 
 -- 供货商商平类目
-create table supplier_catalogs
+create table supplier_catalog
 (
     id          bigserial primary key,
     supplier_id bigint       not null,
