@@ -98,7 +98,7 @@
         <!-- The Vaadin DSL integration -->
         <dependency>
             <groupId>com.github.mvysny.karibudsl</groupId>
-            <artifactId>karibu-dsl</artifactId>
+            <artifactId>karibu-dsl-v23</artifactId>
             <version>${karibu-dsl.version}</version>
         </dependency>
         <dependency>
