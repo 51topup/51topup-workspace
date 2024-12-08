@@ -4,6 +4,8 @@ import com.taobao.api.DefaultTaobaoClient
 import com.taobao.api.TaobaoClient
 import com.taobao.api.request.AlibabaIdleIsvRateCreateRequest
 import com.taobao.api.request.AlibabaIdleIsvUserQueryRequest
+import com.taobao.api.request.AlibabaIdleUserPermitRequest
+import com.taobao.api.request.AlibabaIdleUserPermitRequest.UserGrantRequest
 import com.taobao.api.request.TopAuthTokenCreateRequest
 import com.taobao.api.response.AlibabaIdleIsvUserQueryResponse
 import com.taobao.api.response.TopAuthTokenCreateResponse
@@ -26,6 +28,16 @@ class GooFishService(
         val req = TopAuthTokenCreateRequest()
         req.code = code
         return topClient.execute(req)
+    }
+
+    fun allowPermits(sessionKey: String) {
+        val request = AlibabaIdleUserPermitRequest().apply {
+            val obj1 = UserGrantRequest()
+            obj1.bizCode = "IDLE_TOP"
+            obj1.sceneType = "22"
+            setParamUserGrantRequest(obj1)
+        }
+        topClient.execute(request, sessionKey)
     }
 
     fun fetchSellerInfo(sessionKey: String): AlibabaIdleIsvUserQueryResponse {
